@@ -1,6 +1,6 @@
 # Index
 
-#### Beginner
+### Beginner
 - let vs var vs const
 - Difference between function declaration & function expression
 - Primitive data type
@@ -9,13 +9,28 @@
 - Timer function
 
 
-#### Advanced
+### Advanced
 - Spread operator
 - Rest syntax
 - Destructuring
 - Higher-Order function
 - Closures
 - call() , apply() and bind()
+- hoisting : hoist a flash ie move it to the top
+- Currying function
+- Event Bubbling and Capturing
+- Debugging
+
+
+<br/>
+
+- Asynchronous js
+- JavaScript Design Patterns
+- Iterators and generators
+- throttle vs debounce
+- object creation patterns tutorial - factory , constructor pattern, prototype pattern
+- JavaScript ES2020
+- Tricky JavaScript interview questions and answers
 
 <hr/>
 
@@ -431,3 +446,200 @@ greeting.apply(person,['India']);// has an array
 
 **Refernce**
 https://medium.com/r?url=https%3A%2F%2Fcodesquery.com%2Fjavascript-call-apply-bind-method%2F
+
+<br/>
+
+### hoisting : hoist a flash ie move it to the top
+
+Hoisting is JavaScript's default behavior of moving declarations to the top.In JavaScript, a variable can be declared after it has been used.In other words; a variable can be used before it has been declared
+
+
+<br/>
+
+### Currying function
+
+- Currying is a transformation of functions that translates a function from callable as f(a, b, c) into callable as f(a)(b)(c).
+
+Currying is when you break down a function that takes multiple arguments into a series of functions that each take only one argument. Here's an example in JavaScript:
+
+```
+function add (a, b) {
+  return a + b;
+}
+add(3, 4); // returns 7
+```
+
+This is a function that takes two arguments, a and b, and returns their sum. We will now curry this function:
+
+```
+function add (a) {
+  return function (b) {
+    return a + b;
+  }
+}
+```
+
+This is a function that takes one argument, a, and returns a function that takes another argument, b, and that function returns their sum.
+
+```
+add(3)(4);
+var add3 = add(3);
+add3(4);
+```
+
+The first statement returns 7, like the add(3, 4) statement. The second statement defines a new function called add3 that will add 3 to its argument. This is what some people may call a closure. The third statement uses the add3 operation to add 3 to 4, again producing 7 as a result.
+
+
+
+<br/>
+
+### Event Bubbling and Capturing
+
+Event bubbling and capturing are two ways of event propagation in the HTML DOM API, when an event occurs in an element inside another element, and both elements have registered a handle for that event.
+
+![](https://cdn-images-1.medium.com/max/480/0*Fk8I6Pmm5WOS4SXI.png)
+
+With bubbling, the event is first captured and handled by the innermost element and then propagated to outer elements.
+With capturing, the event is first captured by the outermost element and propagated to the inner elements.
+
+<br/>
+
+### Debugging
+
+https://www.youtube.com/watch?v=-bS6u_oQFtc&list=PL7pEw9n3GkoW5bYOhVAtmJlak3ZK7SaDf&index=29
+
+
+<br/> <br/>
+
+### Asynchronous js
+
+1. Callback function
+2. Promises
+3. Async await
+
+JavaScript is synchronous by default and is single threaded. This means that code cannot create new threads and run in parallel. JavaScript introduced several features that help us with asynchronous code that do not involve using callbacks:
+
+**Reference**
+- https://flaviocopes.com/javascript-promises/
+- https://flaviocopes.com/javascript-async-await/
+- https://www.youtube.com/watch?v=IGoAdn-e5II
+
+
+### JavaScript Design Patterns
+
+https://medium.com/better-programming/javascript-design-patterns-25f0faaaa15
+
+
+### Iterators and generators
+
+Iterators are a new way to loop over any collection in JavaScript.
+
+https://codeburst.io/a-simple-guide-to-es6-iterators-in-javascript-with-examples-189d052c3d8e
+
+<br/>
+
+### throttle vs debounce
+
+Throttling and debouncing are two ways to optimize event handling.
+
+![](https://cdn-images-1.medium.com/max/640/1*8myBvrcAJu1h0YfhWfX7qg.png)
+
+- Debouncing enforces that a function not be called again until a certain amount of time has passed without it being called. As in "execute this function only if 100 milliseconds have passed without it being called."
+
+- Throttling enforces a maximum number of times a function can be called over time. As in "execute this function at most once every 100 milliseconds."
+
+
+***Good demo (codepen)**
+https://css-tricks.com/the-difference-between-throttling-and-debouncing/
+
+
+<br/>
+
+### object creation patterns tutorial 
+
+https://www.youtube.com/watch?v=xizFJHKHdHw&list=PL7pEw9n3GkoW5bYOhVAtmJlak3ZK7SaDf&index=5
+
+JavaScript has a multitude of styles for creating objects
+
+#### 1. Object Literals
+
+```
+var o = {
+  x: 42,
+  y: 3.14,
+  f: function() {},
+  g: function() {}
+};
+```
+
+#### 2. Factory Functions
+This is the absolute simplest way to create a family of objects that share the same structure, interface, and implementation. Rather than creating an object literal directly, instead we return an object literal from a function. This way, if we need to create the same type of object multiple times or in multiple places, we only need to invoke a function:
+
+```
+function thing() {
+  return {
+    x: 42,
+    y: 3.14,
+    f: function() {},
+    g: function() {}
+  };
+}
+var o = thing();
+```
+
+**Reference**
+
+- https://www.sitepoint.com/javascript-object-creation-patterns-best-practises/
+- https://www.javascripttutorial.net/create-objects-in-javascript/
+
+- https://medium.com/r?url=https%3A%2F%2Fwww.dofactory.com%2Fjavascript%2Fdesign-patterns
+- https://www.dofactory.com/javascript/design-patterns
+
+<br/>
+
+### JavaScript ES2020
+
+The new JavaScript features in ES2020 are:
+
+➡️ String.prototype.matchAll
+
+➡️ import()
+
+➡️ BigInt
+
+➡️ Promise.allSettled
+
+➡️ globalThis
+
+➡️ for-in mechanics
+
+➡️ Optional Chaining
+
+➡️ Nullish coalescing Operator
+
+**Reference**
+- https://radiant-brushlands-42789.herokuapp.com/medium.com/better-programming/javascript-es2020-features-with-simple-examples-d301dbef2c37 
+- https://www.freecodecamp.org/news/javascript-new-features-es2020/
+
+<br/>
+
+ ## Tricky JavaScript interview questions and answers
+
+**Find output:**
+
+a. console.log(5<6<7)
+b. console.log(5>6>7)
+
+a. console.log(5<6<7) =console.log(true<7)=true
+b. console.log(5>6>7) =console.log(true>7)=false
+
+
+<br/>
+
+**Video**
+
+- https://www.youtube.com/watch?v=QCQVttjblRs&list=PL7pEw9n3GkoWn5TcqAdmSzXcvC3d_tfAh&index=5
+
+- Tricky JavaScript Interview Questions and Answers https://www.youtube.com/watch?v=qsNxdukPc2U&list=PL7pEw9n3GkoWn5TcqAdmSzXcvC3d_tfAh&index=6
+
+- JavaScript Mock Interview https://www.youtube.com/watch?v=OOC-ypVnHAY&list=PL7pEw9n3GkoWn5TcqAdmSzXcvC3d_tfAh&index=12
