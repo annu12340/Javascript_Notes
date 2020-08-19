@@ -37,7 +37,7 @@
 
 # Begineer
 
-## let vs var vs const
+## 1. let vs var vs const
   - `const` means that the identifier can't be reassigned. But the value can be changed using var and let 
   - let has a block scope while var has function scope. const also has a block scope
   - var has been in js from the beginning and let was introduced recently
@@ -52,6 +52,7 @@ Input:
 console.log(x);
 let x=5;
 console.log(x);
+
 Output:
 Error
 ```
@@ -62,6 +63,7 @@ Input:
 console.log(x);
 let x=5;
 console.log(x);
+
 Output:
 Error
 ```
@@ -70,19 +72,20 @@ In the example below, we get an error because 'let' baz in the second case, has 
 function run() {
   var foo = "Foo";
   let bar = "Bar";
-console.log(foo, bar);
+  console.log(foo, bar);
 {
     let baz = "Bazz";
     console.log(baz);
   }
 console.log(baz); // ReferenceError
 }
+
 run(); 
 ```
 
 <br/>
 
-## Difference between function declaration & function expression
+## 2. Difference between function declaration & function expression
 
 - Function declaration:
 
@@ -103,12 +106,13 @@ run();
 ```var foo = function() { return 5; } ```
 
 **Example: Function Declaration**
+
 ``` alert(foo()); // Alerts 5. Declarations are loaded before any code can run.```
 ``` function foo() { return 5; } ```
 
 <br/>
 
-## Primitive data type
+## 3. Primitive data type
 
 Following is the list of primitive data types in javascript.
 1. Boolean
@@ -123,7 +127,7 @@ Following is the list of primitive data types in javascript.
 
 <br/>
 
-## Coercion
+## 4. Coercion
 
 When doing mathematical operations, JavaScript can convert numbers to strings:
 + usually adds two numbers. If it is a string, it concatenates them.
@@ -132,6 +136,7 @@ So 2- 'abc' , the output is NaN
 
 **Example**
 
+```
 var x = 5 + 7; // x.valueOf() is 12, typeof x is a number
 
 var x = 5 + "7"; // x.valueOf() is 57, typeof x is a string
@@ -145,9 +150,11 @@ var x = 5 - "7"; // x.valueOf() is -2, typeof x is a number
 var x = "5" - 7; // x.valueOf() is -2, typeof x is a number
 
 var x = 5 - "x"; // x.valueOf() is NaN, typeof x is a number
+```
 
 
-Subtracting a string from a string, does not generate an error but returns NaN (Not a Number):
+- Subtracting a string from a string, does not generate an error but returns NaN (Not a Number):
+
 ``` 
 Example
 "Hello" - "Dolly" // returns NaN
@@ -171,7 +178,6 @@ Boolean(null)         // false
 Boolean(undefined)    // false
 Boolean(false)        // false
 
-
 Boolean({})             // true
 Boolean([])             // true
 Boolean(Symbol())       // true
@@ -188,18 +194,18 @@ Number(" 12s ")                // NaN
 Number(123)                    // 123
 ``` 
 
-##### References
+###### References
 1. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness
 2. https://medium.com/javascript-in-plain-english/how-type-coercion-in-javascript-works-be723e411c0b
 3. https://www.freecodecamp.org/news/js-type-coercion-explained-27ba3d9a2839/
 
-**Type Conversions in JavaScript tutorial**
+Type Conversions in JavaScript tutorial
 
-https://www.youtube.com/watch?v=j9xuvChJftg&list=PL7pEw9n3GkoW5bYOhVAtmJlak3ZK7SaDf&index=53
+1. https://www.youtube.com/watch?v=j9xuvChJftg&list=PL7pEw9n3GkoW5bYOhVAtmJlak3ZK7SaDf&index=53
 
 <br/>
 
-## Passing by Value vs. Reference
+## 5. Passing by Value vs. Reference
 
 ![img](https://cdn-images-1.medium.com/max/640/0*aiUhaRomjRzA8_6U.png)
 
@@ -211,13 +217,13 @@ https://www.youtube.com/watch?v=j9xuvChJftg&list=PL7pEw9n3GkoW5bYOhVAtmJlak3ZK7S
 
 In some programming languages, you can actually decide whether something is passed by value or reference, with your code syntax. But in JavaScript you don't have that option. All primitive types are by value, and all objects are by reference.
 
-**Reference**
+*Reference*
 
 https://codeburst.io/javascript-passing-by-value-vs-reference-explained-in-plain-english-8d00fd06a47c
 
 <br/>
 
-## Timer function
+## 5. Timer function
 
 There are two methods for it:
 
@@ -226,12 +232,12 @@ There are two methods for it:
 
  <hr/>
  
-<br/>
+<br/><br/>
 <br/>
 
 # Advanced
 
-## Spread operator
+## 1. Spread operator
 
 spread syntax refers to the use of an ellipsis of three dots ( … ) to expand an iterable object into the list of arguments
 
@@ -242,7 +248,7 @@ console.log(bar);
 // ['hello', 'bonjour', 'konnichiwa']
 ```
 
-**Difference between spread and assignment operator**
+*Difference between spread and assignment operator*
 
 ```
 const foo = ['hello', 'bonjour', 'konnichiwa'];
@@ -272,7 +278,7 @@ console.log(bar);
 
 <br/>
 
-## Rest syntax
+## 2. Rest syntax
 
 The rest syntax can also be used to pick up property keys that are not already picked up by the destructuring pattern. Those keys and their values are copied into a new object:
 
@@ -288,7 +294,7 @@ console.log(others);// {country: "Nigeria", job: "Developer"}
 
 <br/>
 
-## Destructuring
+## 3. Destructuring
 
 The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables.
 
@@ -324,7 +330,7 @@ console.log(job);//Developer"
 
 <br/>
 
-## Higher-Order function
+## 4. Higher-Order function
 
 A Higher-Order function is a function that receives a function as an argument or returns the function as output.
 
@@ -355,7 +361,7 @@ const persons = [
 
 <br/>
 
-## Closures
+## 5. Closures
 
 A closure is a function having access to the parent scope, even after the parent function has closed.
 A Basic Example of Closures in JavaScript:
@@ -381,7 +387,7 @@ showName ("Michael", "Jackson"); // Your name is Michael Jackson
 
 <br/>
 
-## call() , apply() and bind()
+## 6. call() , apply() and bind()
 
 They all attach this into function (or object) and the difference is in the function invocation (see below).
 
@@ -439,8 +445,9 @@ personContainer("world", "mars"); // output: "James Smith says hello mars", note
 
 ```
 
-
+<br/>
 1. You can use call()/apply() to invoke the function immediately. bind() returns a bound function that, when executed later, will have the correct context ("this") for calling the original function. So bind() can be used when the function needs to be called later in certain events when it's useful.
+
 
 2. Note that when using the apply() function the parameter must be placed in an array. Call() accepts both an array of parameters and a parameter itself.
 
@@ -458,14 +465,14 @@ https://medium.com/r?url=https%3A%2F%2Fcodesquery.com%2Fjavascript-call-apply-bi
 
 <br/>
 
-## Hoisting : hoist a flash ie move it to the top
+## 7. Hoisting : hoist a flash ie move it to the top
 
 Hoisting is JavaScript's default behavior of moving declarations to the top.In JavaScript, a variable can be declared after it has been used.In other words; a variable can be used before it has been declared
 
 
 <br/>
 
-## Currying function
+## 8. Currying function
 
 - Currying is a transformation of functions that translates a function from callable as f(a, b, c) into callable as f(a)(b)(c).
 
@@ -502,7 +509,7 @@ The first statement returns 7, like the add(3, 4) statement. The second statemen
 
 <br/>
 
-## Event Bubbling and Capturing
+## 9. Event Bubbling and Capturing
 
 Event bubbling and capturing are two ways of event propagation in the HTML DOM API, when an event occurs in an element inside another element, and both elements have registered a handle for that event.
 
@@ -513,14 +520,14 @@ With capturing, the event is first captured by the outermost element and propaga
 
 <br/>
 
-## Debugging
+## 10. Debugging
 
 https://www.youtube.com/watch?v=-bS6u_oQFtc&list=PL7pEw9n3GkoW5bYOhVAtmJlak3ZK7SaDf&index=29
 
 
 <br/> <br/>
 
-## Asynchronous js
+## 11. Asynchronous js
 
 1. Callback function
 2. Promises
@@ -534,12 +541,12 @@ JavaScript is synchronous by default and is single threaded. This means that cod
 - https://www.youtube.com/watch?v=IGoAdn-e5II
 
 
-## JavaScript Design Patterns
+## 12. JavaScript Design Patterns
 
 https://medium.com/better-programming/javascript-design-patterns-25f0faaaa15
 
 
-## Iterators and generators
+## 13. Iterators and generators
 
 Iterators are a new way to loop over any collection in JavaScript.
 
@@ -547,7 +554,7 @@ https://codeburst.io/a-simple-guide-to-es6-iterators-in-javascript-with-examples
 
 <br/>
 
-## Throttle vs debounce
+## 14. Throttle vs debounce
 
 Throttling and debouncing are two ways to optimize event handling.
 
@@ -558,13 +565,13 @@ Throttling and debouncing are two ways to optimize event handling.
 - Throttling enforces a maximum number of times a function can be called over time. As in "execute this function at most once every 100 milliseconds."
 
 
-**Good demo (codepen)**
+*Good demo (codepen)*
 https://css-tricks.com/the-difference-between-throttling-and-debouncing/
 
 
 <br/>
 
-## Object creation patterns tutorial 
+## 15. Object creation patterns tutorial 
 
 https://www.youtube.com/watch?v=xizFJHKHdHw&list=PL7pEw9n3GkoW5bYOhVAtmJlak3ZK7SaDf&index=5
 
@@ -606,7 +613,7 @@ var o = thing();
 
 <br/>
 
-## JavaScript ES2020
+## 16. JavaScript ES2020
 
 The new JavaScript features in ES2020 are:
 
@@ -626,13 +633,14 @@ The new JavaScript features in ES2020 are:
 
 ➡️ Nullish coalescing Operator
 
-**Reference**
+*Reference*
 - https://radiant-brushlands-42789.herokuapp.com/medium.com/better-programming/javascript-es2020-features-with-simple-examples-d301dbef2c37 
 - https://www.freecodecamp.org/news/javascript-new-features-es2020/
 
-<br/> <br/>
+<br/> <br/>  <br/>
 
- # Tricky JavaScript interview questions and answers
+
+# Tricky JavaScript interview questions and answers
 
 **Find output:**
 
