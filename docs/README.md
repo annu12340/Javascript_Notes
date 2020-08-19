@@ -1,23 +1,33 @@
 # Index
 
-#### Begineer
+#### Beginner
 - let vs var vs const
-- difference between function declaration & function expression
+- Difference between function declaration & function expression
 - Primitive data type
-- coercion
+- Coercion
+- Passing by Value vs. Reference
+- Timer function
+
 
 #### Advanced
-
+- Spread operator
+- Rest syntax
+- Destructuring
+- Higher-Order function
+- Closures
+- call() , apply() and bind()
 
 <hr/>
 
 
 #### Begineer
+
   ##### let vs var vs const
   - `const` means that the identifier can't be reassigned. But the value can be changed using var and let 
   - let has a block scope while var has function scope. const also has a block scope
   - var has been in js from the beginning and let was introduced recently
 ![alt text](https://cdn-images-1.medium.com/max/640/1*VVvtcniPdrzrZNEICjYCOg.png)
+
 ``` let : l : block and better ```
 - var gets hoisted at the top, but variables defined with let doesn't get hoisted
 
@@ -55,13 +65,18 @@ console.log(baz); // ReferenceError
 run(); 
 ```
 
+<br/>
 
-  ##### Difference between function declaration & function expression
+  ### Difference between function declaration & function expression
 - Function declaration:
+
 ``` function doStuff() {}; ```
 
 - Function expression:
+
 ```const doStuff = function() {} ```
+
+
 
 - Function declarations are hoisted but function expressions are not.
 
@@ -75,6 +90,7 @@ run();
 ``` alert(foo()); // Alerts 5. Declarations are loaded before any code can run.```
 ``` function foo() { return 5; } ```
 
+<br/>
 
 ### Primitive data type
 Following is the list of primitive data types in javascript.
@@ -87,20 +103,29 @@ Following is the list of primitive data types in javascript.
 7. Symbol
  ![img](https://cdn-images-1.medium.com/max/640/1*mGcma7XgNq6D7lypiRDrZA.png)
 
+<br/>
 
-### coercion
+### Coercion
+
 When doing mathematical operations, JavaScript can convert numbers to strings:
 + usually adds two numbers. If it is a string, it concatenates them.
 - always subtracts. So if a string is given, it is converted to number.
 So 2- 'abc' , the output is NaN
 
 **Example**
+
 var x = 5 + 7; // x.valueOf() is 12, typeof x is a number
+
 var x = 5 + "7"; // x.valueOf() is 57, typeof x is a string
+
 var x = "5" + 7; // x.valueOf() is 57, typeof x is a string
+
 var x = 5–7; // x.valueOf() is -2, typeof x is a number
+
 var x = 5 - "7"; // x.valueOf() is -2, typeof x is a number
+
 var x = "5" - 7; // x.valueOf() is -2, typeof x is a number
+
 var x = 5 - "x"; // x.valueOf() is NaN, typeof x is a number
 
 
@@ -150,3 +175,259 @@ Number(123)                    // 123
 2. https://medium.com/javascript-in-plain-english/how-type-coercion-in-javascript-works-be723e411c0b
 3. https://www.freecodecamp.org/news/js-type-coercion-explained-27ba3d9a2839/
 
+**Type Conversions in JavaScript tutorial**
+https://www.youtube.com/watch?v=j9xuvChJftg&list=PL7pEw9n3GkoW5bYOhVAtmJlak3ZK7SaDf&index=53
+
+<br/>
+
+### Passing by Value vs. Reference
+
+![img](https://cdn-images-1.medium.com/max/640/0*aiUhaRomjRzA8_6U.png)
+
+- When assigning a variable (a) a primitive value the equals operator sets up a location (address) in memory (represented by 0x001 in the picture) to store the information and points the variable (a) to that address.
+
+![](https://cdn-images-1.medium.com/max/640/0*5uzUoPoVNxLBxDPF.png)
+
+- Passing by reference relates to objects in Javascript (ALL objects including functions).
+
+In some programming languages, you can actually decide whether something is passed by value or reference, with your code syntax. But in JavaScript you don't have that option. All primitive types are by value, and all objects are by reference.
+
+**Reference**
+https://codeburst.io/javascript-passing-by-value-vs-reference-explained-in-plain-english-8d00fd06a47c
+
+<br/>
+
+### Timer function
+
+There are two methods for it:
+
+- setTimeout allows us to run a function once after the interval of time.
+- setInterval allows us to run a function repeatedly, starting after the interval of time, then repeating continuously at that interval.
+
+ <hr/>
+
+# Advanced
+
+### Spread operator
+
+spread syntax refers to the use of an ellipsis of three dots ( … ) to expand an iterable object into the list of arguments
+
+```
+const foo = ['hello', 'bonjour', 'konnichiwa'];
+const bar = [...foo]; 
+console.log(bar);
+// ['hello', 'bonjour', 'konnichiwa']
+```
+
+**Difference between spread and assignment operator**
+
+```
+const foo = ['hello', 'bonjour', 'konnichiwa'];
+const bar1 = [...foo];
+const bar2 = foo;
+bar1.push('a');
+bar2.push('b');
+console.log(foo); //["hello", "bonjour", "konnichiwa", "b"]
+console.log(bar1); // ["hello", "bonjour", "konnichiwa", "a"]
+console.log(bar2); // ["hello", "bonjour", "konnichiwa", "b"]
+```
+
+Arrays and objects are mutable while strings and int are immutable. So, when we write bar2 = foo,  we are using call by reference. Hence, when we edited bar2.push('b'); the value of foo also changed
+But using spread operator, we are creating two instances
+
+```
+// destrucing in objects
+const foo = {
+  english: 'hello',
+  french: 'bonjour',
+  japanese: 'konnichiwa'
+};
+const bar = {...foo};
+console.log(bar);
+// { english: 'hello', french: 'bonjour', japanese: 'konnichiwa' }
+```
+
+<br/>
+
+### Rest syntax
+
+The rest syntax can also be used to pick up property keys that are not already picked up by the destructuring pattern. Those keys and their values are copied into a new object:
+
+```
+let person = {name: "Sarah", country: "Nigeria", job: "Developer" friends: ["Annie", "Becky"]};
+let person = {name: "Sarah", country: "Nigeria", job: "Developer" friends: ["Annie", "Becky"]};
+let {name, friends, ...others} = person;
+console.log(name);//"Sarah"
+console.log(friends);//["Annie", "Becky"]
+console.log(others);// {country: "Nigeria", job: "Developer"}
+```
+
+
+<br/>
+
+### Destructuring
+
+The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables.
+
+1. Arrays : We can write any name for the parameter(greeting, prononu) and order is important
+
+
+```
+let introduction = ["Hello", "I" , "am", "Sarah"];
+let [greeting, pronoun] = introduction;
+console.log(greeting);//"Hello"
+console.log(pronoun);//"I"
+```
+
+2. Objects: Here the parameter name should be equal to the key of the object and order is not important
+
+```
+//USUAL MANNER
+let person = {name: "Sarah", country: "Nigeria", job: "Developer"};
+let name = person.name;
+let country = person.country;
+let job = person.job;
+console.log(name);//"Sarah"
+console.log(country);//"Nigeria"
+console.log(job);//Developer"
+
+
+// DESTRUCTURING
+let {name, country, job} = person;
+console.log(name);//"Sarah"
+console.log(country);//"Nigeria"
+console.log(job);//Developer"
+```
+
+<br/>
+
+### Higher-Order function
+
+A Higher-Order function is a function that receives a function as an argument or returns the function as output.
+
+![](https://i.imgur.com/EqIyF7Em.png)
+
+**a. Map function**
+
+The map() method creates a new array with the results of calling a function for every array element.
+The map() method calls the provided function once for each element in an array, in order. It does not change the original array.
+
+```
+const arr1 = [1, 2, 3];
+const arr2 = arr1.map(item => item * 2);
+console.log(arr2);
+```
+
+
+**b. Filter**
+```
+const persons = [
+  { name: 'Peter', age: 16 },
+  { name: 'Mark', age: 18 },
+  { name: 'John', age: 27 },
+  { name: 'Jane', age: 14 },
+  { name: 'Tony', age: 24},
+];const fullAge = persons.filter(person => person.age >= 18);console.log(fullAge);
+```
+
+<br/>
+
+### Closures
+
+A closure is a function having access to the parent scope, even after the parent function has closed.
+A Basic Example of Closures in JavaScript:
+
+```
+function showName (firstName, lastName) {
+
+var nameIntro = "Your name is ";
+    // this inner function has access to the outer 
+
+function's variables, including the parameter
+
+function makeFullName ()   {    
+  return nameIntro + firstName + " " + lastName;  
+}
+
+return makeFullName ();
+
+}
+
+showName ("Michael", "Jackson"); // Your name is Michael Jackson
+```
+
+<br/>
+
+### call() , apply() and bind()
+
+They all attach this into function (or object) and the difference is in the function invocation (see below).
+
+- call attaches this into function and executes the function immediately:
+```
+var person = {  
+  name: "James Smith",
+  hello: function(thing) {
+    console.log(this.name + " says hello " + thing);
+  }
+}
+person.hello("world");  // output: "James Smith says hello world"
+person.hello.call({ name: "Jim Smith" }, "world"); // output: "Jim Smith says hello world"
+```
+
+- bind attaches this into function and it needs to be invoked separately like this:
+
+```
+var person = {  
+  name: "James Smith",
+  hello: function(thing) {
+    console.log(this.name + " says hello " + thing);
+  }
+}
+
+person.hello("world");  // output: "James Smith says hello world"
+
+var helloFunc = person.hello.bind({ name: "Jim Smith" });
+
+helloFunc("world");  // output: Jim Smith says hello world"
+```
+
+or like this:
+
+```
+var helloFunc = person.hello.bind({ name: "Jim Smith" }, "world");
+helloFunc();  // output: Jim Smith says hello world"
+```
+
+- apply is similar to call except that it takes an array-like object instead of listing the arguments out one at a time:
+
+```
+function personContainer() {
+
+  var person = {  
+     name: "James Smith",
+     hello: function() {
+       console.log(this.name + " says hello " + arguments[1]);
+     }
+  }
+  person.hello.apply(person, arguments);
+}
+
+personContainer("world", "mars"); // output: "James Smith says hello mars", note: arguments[
+
+```
+
+
+1. You can use call()/apply() to invoke the function immediately. bind() returns a bound function that, when executed later, will have the correct context ("this") for calling the original function. So bind() can be used when the function needs to be called later in certain events when it's useful.
+
+2. Note that when using the apply() function the parameter must be placed in an array. Call() accepts both an array of parameters and a parameter itself.
+
+```
+const greetingJohn = greeting.bind(john, 'uk');
+greetingJohn();//must be called again
+greeting.call(person,'India');
+greeting.apply(person,['India']);// has an array
+```
+
+
+**Refernce**
+https://medium.com/r?url=https%3A%2F%2Fcodesquery.com%2Fjavascript-call-apply-bind-method%2F
