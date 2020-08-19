@@ -35,9 +35,9 @@
 <hr/>
 
 
-#### Begineer
+# Begineer
 
-  ##### let vs var vs const
+## let vs var vs const
   - `const` means that the identifier can't be reassigned. But the value can be changed using var and let 
   - let has a block scope while var has function scope. const also has a block scope
   - var has been in js from the beginning and let was introduced recently
@@ -82,7 +82,8 @@ run();
 
 <br/>
 
-  ### Difference between function declaration & function expression
+## Difference between function declaration & function expression
+
 - Function declaration:
 
 ``` function doStuff() {}; ```
@@ -107,7 +108,8 @@ run();
 
 <br/>
 
-### Primitive data type
+## Primitive data type
+
 Following is the list of primitive data types in javascript.
 1. Boolean
 2. Null
@@ -116,11 +118,12 @@ Following is the list of primitive data types in javascript.
 5. BigInt
 6. String
 7. Symbol
- ![img](https://cdn-images-1.medium.com/max/640/1*mGcma7XgNq6D7lypiRDrZA.png)
+
+![img](https://cdn-images-1.medium.com/max/640/1*mGcma7XgNq6D7lypiRDrZA.png)
 
 <br/>
 
-### Coercion
+## Coercion
 
 When doing mathematical operations, JavaScript can convert numbers to strings:
 + usually adds two numbers. If it is a string, it concatenates them.
@@ -191,11 +194,12 @@ Number(123)                    // 123
 3. https://www.freecodecamp.org/news/js-type-coercion-explained-27ba3d9a2839/
 
 **Type Conversions in JavaScript tutorial**
+
 https://www.youtube.com/watch?v=j9xuvChJftg&list=PL7pEw9n3GkoW5bYOhVAtmJlak3ZK7SaDf&index=53
 
 <br/>
 
-### Passing by Value vs. Reference
+## Passing by Value vs. Reference
 
 ![img](https://cdn-images-1.medium.com/max/640/0*aiUhaRomjRzA8_6U.png)
 
@@ -208,11 +212,12 @@ https://www.youtube.com/watch?v=j9xuvChJftg&list=PL7pEw9n3GkoW5bYOhVAtmJlak3ZK7S
 In some programming languages, you can actually decide whether something is passed by value or reference, with your code syntax. But in JavaScript you don't have that option. All primitive types are by value, and all objects are by reference.
 
 **Reference**
+
 https://codeburst.io/javascript-passing-by-value-vs-reference-explained-in-plain-english-8d00fd06a47c
 
 <br/>
 
-### Timer function
+## Timer function
 
 There are two methods for it:
 
@@ -220,10 +225,13 @@ There are two methods for it:
 - setInterval allows us to run a function repeatedly, starting after the interval of time, then repeating continuously at that interval.
 
  <hr/>
+ 
+<br/>
+<br/>
 
 # Advanced
 
-### Spread operator
+## Spread operator
 
 spread syntax refers to the use of an ellipsis of three dots ( … ) to expand an iterable object into the list of arguments
 
@@ -264,7 +272,7 @@ console.log(bar);
 
 <br/>
 
-### Rest syntax
+## Rest syntax
 
 The rest syntax can also be used to pick up property keys that are not already picked up by the destructuring pattern. Those keys and their values are copied into a new object:
 
@@ -280,11 +288,11 @@ console.log(others);// {country: "Nigeria", job: "Developer"}
 
 <br/>
 
-### Destructuring
+## Destructuring
 
 The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables.
 
-1. Arrays : We can write any name for the parameter(greeting, prononu) and order is important
+1. **Arrays** : We can write any name for the parameter(greeting, prononu) and order is important
 
 
 ```
@@ -294,7 +302,7 @@ console.log(greeting);//"Hello"
 console.log(pronoun);//"I"
 ```
 
-2. Objects: Here the parameter name should be equal to the key of the object and order is not important
+2. **Objects**: Here the parameter name should be equal to the key of the object and order is not important
 
 ```
 //USUAL MANNER
@@ -316,7 +324,7 @@ console.log(job);//Developer"
 
 <br/>
 
-### Higher-Order function
+## Higher-Order function
 
 A Higher-Order function is a function that receives a function as an argument or returns the function as output.
 
@@ -347,7 +355,7 @@ const persons = [
 
 <br/>
 
-### Closures
+## Closures
 
 A closure is a function having access to the parent scope, even after the parent function has closed.
 A Basic Example of Closures in JavaScript:
@@ -373,7 +381,7 @@ showName ("Michael", "Jackson"); // Your name is Michael Jackson
 
 <br/>
 
-### call() , apply() and bind()
+## call() , apply() and bind()
 
 They all attach this into function (or object) and the difference is in the function invocation (see below).
 
@@ -445,18 +453,19 @@ greeting.apply(person,['India']);// has an array
 
 
 **Refernce**
+
 https://medium.com/r?url=https%3A%2F%2Fcodesquery.com%2Fjavascript-call-apply-bind-method%2F
 
 <br/>
 
-### hoisting : hoist a flash ie move it to the top
+## Hoisting : hoist a flash ie move it to the top
 
 Hoisting is JavaScript's default behavior of moving declarations to the top.In JavaScript, a variable can be declared after it has been used.In other words; a variable can be used before it has been declared
 
 
 <br/>
 
-### Currying function
+## Currying function
 
 - Currying is a transformation of functions that translates a function from callable as f(a, b, c) into callable as f(a)(b)(c).
 
@@ -493,7 +502,7 @@ The first statement returns 7, like the add(3, 4) statement. The second statemen
 
 <br/>
 
-### Event Bubbling and Capturing
+## Event Bubbling and Capturing
 
 Event bubbling and capturing are two ways of event propagation in the HTML DOM API, when an event occurs in an element inside another element, and both elements have registered a handle for that event.
 
@@ -504,14 +513,14 @@ With capturing, the event is first captured by the outermost element and propaga
 
 <br/>
 
-### Debugging
+## Debugging
 
 https://www.youtube.com/watch?v=-bS6u_oQFtc&list=PL7pEw9n3GkoW5bYOhVAtmJlak3ZK7SaDf&index=29
 
 
 <br/> <br/>
 
-### Asynchronous js
+## Asynchronous js
 
 1. Callback function
 2. Promises
@@ -525,12 +534,12 @@ JavaScript is synchronous by default and is single threaded. This means that cod
 - https://www.youtube.com/watch?v=IGoAdn-e5II
 
 
-### JavaScript Design Patterns
+## JavaScript Design Patterns
 
 https://medium.com/better-programming/javascript-design-patterns-25f0faaaa15
 
 
-### Iterators and generators
+## Iterators and generators
 
 Iterators are a new way to loop over any collection in JavaScript.
 
@@ -538,7 +547,7 @@ https://codeburst.io/a-simple-guide-to-es6-iterators-in-javascript-with-examples
 
 <br/>
 
-### throttle vs debounce
+## Throttle vs debounce
 
 Throttling and debouncing are two ways to optimize event handling.
 
@@ -549,13 +558,13 @@ Throttling and debouncing are two ways to optimize event handling.
 - Throttling enforces a maximum number of times a function can be called over time. As in "execute this function at most once every 100 milliseconds."
 
 
-***Good demo (codepen)**
+**Good demo (codepen)**
 https://css-tricks.com/the-difference-between-throttling-and-debouncing/
 
 
 <br/>
 
-### object creation patterns tutorial 
+## Object creation patterns tutorial 
 
 https://www.youtube.com/watch?v=xizFJHKHdHw&list=PL7pEw9n3GkoW5bYOhVAtmJlak3ZK7SaDf&index=5
 
@@ -597,7 +606,7 @@ var o = thing();
 
 <br/>
 
-### JavaScript ES2020
+## JavaScript ES2020
 
 The new JavaScript features in ES2020 are:
 
@@ -621,9 +630,9 @@ The new JavaScript features in ES2020 are:
 - https://radiant-brushlands-42789.herokuapp.com/medium.com/better-programming/javascript-es2020-features-with-simple-examples-d301dbef2c37 
 - https://www.freecodecamp.org/news/javascript-new-features-es2020/
 
-<br/>
+<br/> <br/>
 
- ## Tricky JavaScript interview questions and answers
+ # Tricky JavaScript interview questions and answers
 
 **Find output:**
 
