@@ -5,7 +5,9 @@
 - Function
 
   A. Parameters vs arguments 
+
   B. Difference between function declaration & function expression
+
   C. Arrow function
   
 - Primitive data type
@@ -16,6 +18,7 @@
 
 ### Good to know
 - Execution context 
+- Execution Stack
 
 ### Advanced
 - Spread operator
@@ -44,6 +47,8 @@
 
 
 # Begineer
+
+![44d0f9f5f90db6a3bc8542642cb38dbe9f10fec1cdadb7264fb7962751f61393_1](https://user-images.githubusercontent.com/43414928/94434636-bc9d4b00-01b7-11eb-8671-4f791e20b958.jpg)
 
 ## 1. let vs var vs const
   - `const` means that the identifier can't be reassigned. But the value can be changed using var and let 
@@ -157,6 +162,10 @@ Const hi=(a,b)=>{…}
 
 ```
 
+
+![55f50ccbd7b9ae431a613be97d7d73b3b52cc7b6802b85947ffeb1a1e9de5711_1](https://user-images.githubusercontent.com/43414928/94434638-bd35e180-01b7-11eb-8f25-bb20783f5aa7.jpg)
+
+
 ## 3. Primitive data type
 
 Following is the list of primitive data types in javascript.
@@ -184,7 +193,7 @@ Eg: let a=null
 
 ```
 
-![img](https://cdn-images-1.medium.com/max/640/1*mGcma7XgNq6D7lypiRDrZA.png)
+![arrays-are-objects](https://user-images.githubusercontent.com/43414928/94436086-a1cbd600-01b9-11eb-986f-2b54b5956282.jpg)
 
 <br/>
 
@@ -264,6 +273,9 @@ Type Conversions in JavaScript tutorial
 
 1. https://www.youtube.com/watch?v=j9xuvChJftg&list=PL7pEw9n3GkoW5bYOhVAtmJlak3ZK7SaDf&index=53
 
+![rn1g4zgpxj5b448fjv9c](https://user-images.githubusercontent.com/43414928/94433397-e05f9180-01b5-11eb-969d-7bff16faa092.jpeg)
+
+
 <br/>
 
 ## 5. Passing by Value vs. Reference
@@ -320,14 +332,26 @@ A. Creation PHASE
 
 - All this means is that before your code begins to be executed line by line, the JavaScript engine has already set aside memory space for the variables that you've created in that entire code that you've built, and all of the functions that you've created as well. So those functions and those variables exist in memory. So when the code begins to execute line by line, it can access them.
 
-- However, when it comes to variables, it's a little bit different. You see the function in its entirety is placed into memory space, meaning that the function, its name and the code inside the function is being executed. However the next phase, the execution phase is where it actually executes your code line by line, that's when these kind of assignments are set, where var a = 1. So the JavaScript engine when it sets up the memory space for a, it doesn't know what its value will ultimately end up being until it starts executing its code. So instead, it puts a placeholder called undefined. That placeholder means oh, I don't know what this value is yet. It's the same placeholder that we would have, if we never said it at all. All variables in JavaScript are initially set to undefined, and functions are sitting in memory in their entirety.
+- However, when it comes to variables, it's a little bit different. You see the function in its entirety is placed into memory space, meaning that the function, its name and the code inside the function is being executed. However the next phase, the execution phase is where it actually executes your code line by line, that's when these kind of assignments are set, where var a = 1. So the JavaScript engine when it sets up the memory space for a, it doesn't know what its value will ultimately end up being until it starts executing its code. So instead, it puts a placeholder called undefined. That placeholder means oh, I don't know what this value is yet. 
 
-- Determines the value of this take place during creation phase
+- All variables in JavaScript are initially set to undefined, and functions are sitting in memory in their entirety.
 
 B. Execution PHASE 
 
 When the code is executed line-by-line (by JS interpreeter) it can access the variables defined inside Execution Context
 variable assignment are done in this phase
+
+
+<br/ >
+
+## 2. Execution Stack
+
+When the JavaScript engine first encounters your script, it creates a global execution context and pushes it to the current execution stack. Whenever the engine finds a function invocation, it creates a new execution context for that function and pushes it to the top of the stack.
+
+The engine executes the function whose execution context is at the top of the stack. When this function completes, its execution stack is popped off from the stack, and the control reaches to the context below it in the current stack.
+
+![Screenshot1](https://user-images.githubusercontent.com/43414928/94432962-33851480-01b5-11eb-9e8e-558f938867fc.png)
+
 
  <hr/>
 <br/><br/>
