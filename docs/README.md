@@ -162,8 +162,9 @@ Const hi=(a,b)=>{…}
 
 ```
 
+![a85e34e30f2aa20be5b19dcb579a14fdaa07f3e9137b750f5bcf8a941f841f4b_1](https://user-images.githubusercontent.com/43414928/94437887-fff9b880-01bb-11eb-953d-b4b2c65a2408.jpg)
 
-![55f50ccbd7b9ae431a613be97d7d73b3b52cc7b6802b85947ffeb1a1e9de5711_1](https://user-images.githubusercontent.com/43414928/94434638-bd35e180-01b7-11eb-8f25-bb20783f5aa7.jpg)
+
 
 
 ## 3. Primitive data type
@@ -204,6 +205,12 @@ When doing mathematical operations, JavaScript can convert numbers to strings:
 - always subtracts. So if a string is given, it is converted to number.
 So 2- 'abc' , the output is NaN
 
+![coercion-every-time-2](https://user-images.githubusercontent.com/43414928/94437360-44d11f80-01bb-11eb-9613-66d8cf5931e2.jpeg)
+
+
+'a' -'b'  the output is NaN and typeof NaN is number
+
+![when-you-minus-two-strings-and-it-turns-into-an-62023809](https://user-images.githubusercontent.com/43414928/94437313-3420a980-01bb-11eb-9ee7-1d3ab1a512d0.png)
 **Example**
 
 ```
@@ -306,6 +313,10 @@ There are two methods for it:
  <hr/>
  
 <br/><br/>
+![55f50ccbd7b9ae431a613be97d7d73b3b52cc7b6802b85947ffeb1a1e9de5711_1](https://user-images.githubusercontent.com/43414928/94434638-bd35e180-01b7-11eb-8f25-bb20783f5aa7.jpg)
+
+![2e0aebffb46846a79c438495256cea925d6fcd5a288995cfc70bdda1ffbd7d8c_1](https://user-images.githubusercontent.com/43414928/94438091-451dea80-01bc-11eb-9e31-28af25a989d1.jpg)
+
 <br/>
 
 # Good to know
@@ -486,27 +497,30 @@ const persons = [
 ## 5. Closures
 
 A closure is a function having access to the parent scope, even after the parent function has closed.
+
 A Basic Example of Closures in JavaScript:
 
 ```
-function showName (firstName, lastName) {
+function outerFunc() {
+  let outerVar = 'I am outside!';
 
-var nameIntro = "Your name is ";
-    // this inner function has access to the outer 
+  function innerFunc() {
+    console.log(outerVar); // => logs "I am outside!"
+  }
 
-function's variables, including the parameter
-
-function makeFullName ()   {    
-  return nameIntro + firstName + " " + lastName;  
+  return innerFunc;
 }
 
-return makeFullName ();
-
-}
-
-showName ("Michael", "Jackson"); // Your name is Michael Jackson
+const myInnerFunc = outerFunc();
+myInnerFunc();
 ```
 
+Closure means that an inner function always has access to the vars and parameters of its outer function, even after the outer function has returned.
+![Screenshot4](https://user-images.githubusercontent.com/43414928/94444548-1146c300-01c4-11eb-867f-a142e24fbb1c.png)
+![1](https://user-images.githubusercontent.com/43414928/94445453-15bfab80-01c5-11eb-9075-fe8d56d2e5ef.png)
+
+
+Refer : https://dmitripavlutin.com/simple-explanation-of-javascript-closures/
 <br/>
 
 ## 6. call() , apply() and bind()
