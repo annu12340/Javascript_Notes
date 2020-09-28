@@ -2,12 +2,20 @@
 
 ### Beginner
 - let vs var vs const
-- Difference between function declaration & function expression
+- Function
+
+  A. Parameters vs arguments 
+  B. Difference between function declaration & function expression
+  C. Arrow function
+  
 - Primitive data type
 - Coercion
 - Passing by Value vs. Reference
 - Timer function
 
+
+### Good to know
+- Execution context 
 
 ### Advanced
 - Spread operator
@@ -82,10 +90,26 @@ console.log(baz); // ReferenceError
 
 run(); 
 ```
+![Screenshot](https://user-images.githubusercontent.com/43414928/94429288-ba36f300-01af-11eb-9133-623ceac689f6.png)
+
 
 <br/>
 
-## 2. Difference between function declaration & function expression
+## 2. Functions
+
+#### A. Parameters vs arguments
+
+```
+Function hi(a,b) // a and b are parameters
+{
+Console.log(“hi “,a,b)
+}
+
+Hi(“Riya”,”James”)	// Riya and James are arguments
+
+```
+
+#### B. Difference between function declaration & function expression
 
 - Function declaration:
 
@@ -103,14 +127,35 @@ run();
 **Example: Function Expression**
 
 ``` alert(foo()); // ERROR! foo wasn't loaded yet ```
+
 ```var foo = function() { return 5; } ```
 
 **Example: Function Declaration**
 
 ``` alert(foo()); // Alerts 5. Declarations are loaded before any code can run.```
+
 ``` function foo() { return 5; } ```
 
 <br/>
+
+
+#### C. Arrow function
+
+All arrow functions should be anonymous
+
+```
+CONVERTION
+
+Const hi = Function (a,b) 
+{
+Console.log(“hi “,a,b)
+}
+
+Remove ‘function’ and add => btw parameter and the brackets
+
+Const hi=(a,b)=>{…}
+
+```
 
 ## 3. Primitive data type
 
@@ -122,6 +167,22 @@ Following is the list of primitive data types in javascript.
 5. BigInt
 6. String
 7. Symbol
+
+```
+Typeof NaN  // “number”
+
+Typeof Infinity  // “number”
+
+
+
+Let a;
+Console.log(a) //undefined
+
+-	Undefined is used when we declare a variable but haven’t assigned a value to it
+-	We use null to explicitly tell that there is nothing
+Eg: let a=null
+
+```
 
 ![img](https://cdn-images-1.medium.com/max/640/1*mGcma7XgNq6D7lypiRDrZA.png)
 
@@ -232,6 +293,43 @@ There are two methods for it:
 
  <hr/>
  
+<br/><br/>
+<br/>
+
+# Good to know
+
+## 1. Execution context 
+
+When a JavaScript engine executes a script, it creates execution contexts. Execution context (EC) is defined as the environment in which the JavaScript code is executed. By environment, I mean the value of this, variables, objects, and functions JavaScript code has access to at a particular time.
+
+```
+Execution Context (Global), created by JS Engine contains 3 important things for you:
+
+- Global object - window
+- Special Object this
+- Ref to outer environment
+```
+
+**Each execution context has two phases: the creation phase and the execution phase.**
+
+A. Creation PHASE
+
+- Creation phase is the phase in which the JS engine has called a function but its execution has not started. In the creation phase, JS engine is in the compilation phase and it just scans over the function code to compile the code, it doesn’t execute any code.
+
+- As the parser runs through your code and begins to set up what you've written for translation, it recognizes where you've created variables and where you've created functions. And so it sets up in this creation phase, the memory space for the variables and functions. And it's that step that is somewhat confusingly called hoisting. 
+
+- All this means is that before your code begins to be executed line by line, the JavaScript engine has already set aside memory space for the variables that you've created in that entire code that you've built, and all of the functions that you've created as well. So those functions and those variables exist in memory. So when the code begins to execute line by line, it can access them.
+
+- However, when it comes to variables, it's a little bit different. You see the function in its entirety is placed into memory space, meaning that the function, its name and the code inside the function is being executed. However the next phase, the execution phase is where it actually executes your code line by line, that's when these kind of assignments are set, where var a = 1. So the JavaScript engine when it sets up the memory space for a, it doesn't know what its value will ultimately end up being until it starts executing its code. So instead, it puts a placeholder called undefined. That placeholder means oh, I don't know what this value is yet. It's the same placeholder that we would have, if we never said it at all. All variables in JavaScript are initially set to undefined, and functions are sitting in memory in their entirety.
+
+- Determines the value of this take place during creation phase
+
+B. Execution PHASE 
+
+When the code is executed line-by-line (by JS interpreeter) it can access the variables defined inside Execution Context
+variable assignment are done in this phase
+
+ <hr/>
 <br/><br/>
 <br/>
 
