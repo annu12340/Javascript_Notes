@@ -19,6 +19,8 @@
 ### Good to know
 - Execution context 
 - Execution Stack
+- JavaScript Prototypes
+
 
 ### Advanced
 - Spread operator
@@ -363,6 +365,33 @@ The engine executes the function whose execution context is at the top of the st
 
 ![Screenshot1](https://user-images.githubusercontent.com/43414928/94432962-33851480-01b5-11eb-9e8e-558f938867fc.png)
 
+
+## 3. JavaScript Prototypes
+
+Every JavaScript object has an internal hidden "slot" called [[Prototype]]. You can think of a slot as a property on an object, internal to the JavaScript engine, hidden from the code you write 
+
+**Prototype chain**
+The prototype chain mechanism is simple: When you access a property p on object obj, the JavaScript engine will search this property inside obj object. If the engine fails to search, it continues searching in the prototype of obj object and so on until reaching Object.prototype. If after the search has finished, and nothing has been found the result will be undefined
+
+
+Modern JavaScript implementations allow read and/or write access to the [[Prototype]] in the following ways:
+
+- The new operator (configures the prototype chain on the default object returned from a constructor function),
+- The extends keyword (configures the prototype chain when using the class syntax),
+- Object.create will set the supplied argument as the [[Prototype]] of the resulting object,
+- Object.getPrototypeOf and Object.setPrototypeOf (get/set the [[Prototype]] after object creation), and
+- The standardized accessor (ie. getter/setter) property named __proto__ (similar to 4.)
+
+** “The __proto__ is simply a reference to the prototype object from which the instance has inherited”.**
+
+In a language implementing classical inheritance like Java, C# or C++ you start by creating a class--a blueprint for your objects--and then you can create new objects from that class or you can extend the class, defining a new class that augments the original class.
+
+In JavaScript you first create an object (there is no concept of class), then you can augment your own object or create new objects 
+
+**Prototype Property: Prototype-based Inheritance**
+Prototype is important in JavaScript because JavaScript does not have classical inheritance based on Classes (as most object oriented languages do), and therefore all inheritance in JavaScript is made possible through the prototype property. JavaScript has a prototype-based inheritance mechanism.Inheritance is a programming paradigm where objects (or Classes in some languages) can inherit properties and methods from other objects (or Classes). In JavaScript, you implement inheritance with the prototype property. For example, you can create a Fruit function (an object, since all functions in JavaScript are objects) and add properties and methods on the Fruit prototype property, and all instances of the Fruit function will inherit all the Fruit’s properties and methods.
+
+https://javascript.info/prototype-inheritance
 
  <hr/>
 <br/><br/>
