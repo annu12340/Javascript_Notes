@@ -1,4 +1,5 @@
-Visit site : https://annu12340.github.io/Javascript-Notes/
+# Visit site 
+https://annu12340.github.io/Javascript-Notes/
 
 <br/><br/>
 
@@ -35,3 +36,8 @@ Visit site : https://annu12340.github.io/Javascript-Notes/
 - object creation patterns tutorial - factory , constructor pattern, prototype pattern
 - JavaScript ES2020
 - Tricky JavaScript interview questions and answers
+
+
+
+### CSS Notes
+https://github.com/ResourceAggregator/Frontend-stuff/blob/master/css/css.md
