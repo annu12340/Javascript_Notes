@@ -1,28 +1,34 @@
 # Index
 
 ### Beginner
+
 - let vs var vs const
 - Function
 
-  A. Parameters vs arguments 
+  A. Parameters vs arguments
 
   B. Difference between function declaration & function expression
 
   C. Arrow function
-  
+
 - Primitive data type
 - Coercion
 - Passing by Value vs. Reference
 - Timer function
+- Cookies
 
+=======
+- Difference between innerHTML and innerText
+- Truthy and Falsy values
 
 ### Good to know
-- Execution context 
+
+- Execution context
 - Execution Stack
 - JavaScript Prototypes
 
-
 ### Advanced
+
 - Spread operator
 - Rest syntax
 - Destructuring
@@ -34,7 +40,6 @@
 - Event Bubbling and Capturing
 - Debugging
 
-
 <br/>
 
 - Asynchronous js
@@ -45,28 +50,29 @@
 - JavaScript ES2020
 - Tricky JavaScript interview questions and answers
 
-
 ### Good references
 
 1. https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95
 
 <hr/>
 
-
 # Begineer
 
 ![44d0f9f5f90db6a3bc8542642cb38dbe9f10fec1cdadb7264fb7962751f61393_1](https://user-images.githubusercontent.com/43414928/94434636-bc9d4b00-01b7-11eb-8671-4f791e20b958.jpg)
 
 ## 1. let vs var vs const
-  - `const` means that the identifier can't be reassigned. But the value can be changed using var and let 
-  - let has a block scope while var has function scope. const also has a block scope
-  - var has been in js from the beginning and let was introduced recently
-![alt text](https://cdn-images-1.medium.com/max/640/1*VVvtcniPdrzrZNEICjYCOg.png)
 
-``` let : l : block and better ```
+- `const` means that the identifier can't be reassigned. But the value can be changed using var and let
+- let has a block scope while var has function scope. const also has a block scope
+- var has been in js from the beginning and let was introduced recently
+  ![alt text](https://cdn-images-1.medium.com/max/640/1*VVvtcniPdrzrZNEICjYCOg.png)
+
+`let : l : block and better`
+
 - var gets hoisted at the top, but variables defined with let doesn't get hoisted
 
 **Example of var:**
+
 ```
 Input:
 console.log(x);
@@ -78,6 +84,7 @@ Error
 ```
 
 **Example of let**:
+
 ```
 Input:
 console.log(x);
@@ -87,7 +94,9 @@ console.log(x);
 Output:
 Error
 ```
+
 In the example below, we get an error because 'let' baz in the second case, has only block scope
+
 ```
 function run() {
   var foo = "Foo";
@@ -100,10 +109,10 @@ function run() {
 console.log(baz); // ReferenceError
 }
 
-run(); 
+run();
 ```
-![Screenshot](https://user-images.githubusercontent.com/43414928/94429288-ba36f300-01af-11eb-9133-623ceac689f6.png)
 
+![Screenshot](https://user-images.githubusercontent.com/43414928/94429288-ba36f300-01af-11eb-9133-623ceac689f6.png)
 
 <br/>
 
@@ -112,9 +121,9 @@ run();
 #### A. Parameters vs arguments
 
 ```
-Function hi(a,b) // a and b are parameters
+function hi(a,b) // a and b are parameters
 {
-Console.log(“hi “,a,b)
+console.log(“hi “,a,b)
 }
 
 Hi(“Riya”,”James”)	// Riya and James are arguments
@@ -125,31 +134,27 @@ Hi(“Riya”,”James”)	// Riya and James are arguments
 
 - Function declaration:
 
-``` function doStuff() {}; ```
+`function doStuff() {};`
 
 - Function expression:
 
-```const doStuff = function() {} ```
-
-
+`const doStuff = function() {} `
 
 - Function declarations are hoisted but function expressions are not.
 
-
 **Example: Function Expression**
 
-``` alert(foo()); // ERROR! foo wasn't loaded yet ```
+`alert(foo()); // ERROR! foo wasn't loaded yet`
 
-```var foo = function() { return 5; } ```
+`var foo = function() { return 5; } `
 
 **Example: Function Declaration**
 
-``` alert(foo()); // Alerts 5. Declarations are loaded before any code can run.```
+` alert(foo()); // Alerts 5. Declarations are loaded before any code can run.`
 
-``` function foo() { return 5; } ```
+`function foo() { return 5; }`
 
 <br/>
-
 
 #### C. Arrow function
 
@@ -158,25 +163,23 @@ All arrow functions should be anonymous
 ```
 CONVERTION
 
-Const hi = Function (a,b) 
+const hi = function (a,b)
 {
-Console.log(“hi “,a,b)
+console.log(“hi “,a,b)
 }
 
 Remove ‘function’ and add => btw parameter and the brackets
 
-Const hi=(a,b)=>{…}
+const hi=(a,b)=>{…}
 
 ```
 
 ![a85e34e30f2aa20be5b19dcb579a14fdaa07f3e9137b750f5bcf8a941f841f4b_1](https://user-images.githubusercontent.com/43414928/94437887-fff9b880-01bb-11eb-953d-b4b2c65a2408.jpg)
 
-
-
-
 ## 3. Primitive data type
 
 Following is the list of primitive data types in javascript.
+
 1. Boolean
 2. Null
 3. Undefined
@@ -186,14 +189,14 @@ Following is the list of primitive data types in javascript.
 7. Symbol
 
 ```
-Typeof NaN  // “number”
+typeof NaN  // “number”
 
-Typeof Infinity  // “number”
+typeof Infinity  // “number”
 
 
 
-Let a;
-Console.log(a) //undefined
+let a;
+console.log(a) //undefined
 
 -	Undefined is used when we declare a variable but haven’t assigned a value to it
 -	We use null to explicitly tell that there is nothing
@@ -208,14 +211,15 @@ Eg: let a=null
 ## 4. Coercion
 
 When doing mathematical operations, JavaScript can convert numbers to strings:
-+ usually adds two numbers. If it is a string, it concatenates them.
-- always subtracts. So if a string is given, it is converted to number.
-So 2- 'abc' , the output is NaN
+
+- usually adds two numbers. If it is a string, it concatenates them.
+
+* always subtracts. So if a string is given, it is converted to number.
+  So 2- 'abc' , the output is NaN
 
 ![coercion-every-time-2](https://user-images.githubusercontent.com/43414928/94437360-44d11f80-01bb-11eb-9613-66d8cf5931e2.jpeg)
 
-
-'a' -'b'  the output is NaN and typeof NaN is number
+'a' -'b' the output is NaN and typeof NaN is number
 
 ![when-you-minus-two-strings-and-it-turns-into-an-62023809](https://user-images.githubusercontent.com/43414928/94437313-3420a980-01bb-11eb-9ee7-1d3ab1a512d0.png)
 **Example**
@@ -236,16 +240,15 @@ var x = "5" - 7; // x.valueOf() is -2, typeof x is a number
 var x = 5 - "x"; // x.valueOf() is NaN, typeof x is a number
 ```
 
-
 - Subtracting a string from a string, does not generate an error but returns NaN (Not a Number):
 
-``` 
+```
 Example
 "Hello" - "Dolly" // returns NaN
 ```
 
-
 Example
+
 ```
 var x = "John"; 
 var y = new String("John");
@@ -253,9 +256,10 @@ var y = new String("John");
 ```
 
 **Example**
+
 ```
 Boolean('')           // false
-Boolean(0)            // false     
+Boolean(0)            // false
 Boolean(-0)           // false
 Boolean(NaN)          // false
 Boolean(null)         // false
@@ -276,9 +280,10 @@ Number("-12.34")               // -12.34
 Number("\n")                   // 0
 Number(" 12s ")                // NaN
 Number(123)                    // 123
-``` 
+```
 
 ###### References
+
 1. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness
 2. https://medium.com/javascript-in-plain-english/how-type-coercion-in-javascript-works-be723e411c0b
 3. https://www.freecodecamp.org/news/js-type-coercion-explained-27ba3d9a2839/
@@ -288,7 +293,6 @@ Type Conversions in JavaScript tutorial
 1. https://www.youtube.com/watch?v=j9xuvChJftg&list=PL7pEw9n3GkoW5bYOhVAtmJlak3ZK7SaDf&index=53
 
 ![rn1g4zgpxj5b448fjv9c](https://user-images.githubusercontent.com/43414928/94433397-e05f9180-01b5-11eb-969d-7bff16faa092.jpeg)
-
 
 <br/>
 
@@ -304,7 +308,7 @@ Type Conversions in JavaScript tutorial
 
 In some programming languages, you can actually decide whether something is passed by value or reference, with your code syntax. But in JavaScript you don't have that option. All primitive types are by value, and all objects are by reference.
 
-*Reference*
+_Reference_
 
 https://codeburst.io/javascript-passing-by-value-vs-reference-explained-in-plain-english-8d00fd06a47c
 
@@ -325,10 +329,119 @@ There are two methods for it:
 ![2e0aebffb46846a79c438495256cea925d6fcd5a288995cfc70bdda1ffbd7d8c_1](https://user-images.githubusercontent.com/43414928/94438091-451dea80-01bc-11eb-9e31-28af25a989d1.jpg)
 
 <br/>
+<br />
+
+## 6. Cookies
+
+Cookies are the most efficient method of remembering and tracking preferences, purchases, commissions, and other information required for better visitor experience or site statistics.
+
+Cookies are a plain text data record of 5 variable-length fields −
+
+### Expires − 
+          The date the cookie will expire. If this is blank, the cookie will expire when the visitor quits the browser.
+
+### Domain − 
+          The domain name of your site.
+
+### Path − 
+          The path to the directory or web page that set the cookie. This may be blank if you want to retrieve the cookie from any directory or page.
+
+### Secure − 
+          If this field contains the word "secure", then the cookie may only be retrieved with a secure server. If this field is blank, no such restriction exists.
+
+### Name=Value − 
+          Cookies are set and retrieved in the form of key-value pairs
+          
+<hr />
+
+## Functions on Cookies
+
+### Create a Cookie - 
+          document.cookie = "username=Annu; expires=Thu, 1 Oct 2020 10:00:00 UTC";
+### Read a Cookie -
+          var x = document.cookie;
+### Change a Cookie -  
+          You can change a cookie the same way as you create it:
+          document.cookie = "username=John Smith; expires=Thu, 1 Oct 2020 10:00:00 UTC; path=/";
+### Delete a Cookie -
+          document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+          
+<hr />
+<br />
+
+
+### 6. Difference between innerHTML and innerText
+
+The innerHTML tag returns the text including all spacing and inner element tags.
+On the other hand, innerText property returns just the text, without spacing and inner element tags.
+
+In simple words, innerText retrieves and sets the content of the tag as plain text, whereas innerHTML retrieves and sets the content in HTML format.
+
+**Example**
+
+If HTML has the following tag,
+
+```
+<p id="example">This element has extra spacing   and contains <span>a span element</span>.</p>
+```
+
+and the JavaScript has the following code,
+
+```
+var iText = document.getElementById("example").innerText
+var iHtml = document.getElementById("example").innerHTML
+```
+
+The value stored in `iText` would be `This element has extra spacing and contains a span element.` and `iHTML` would have `This element has extra spacing and contains <span>a span element</span>.`.
+
+## 7. Truthy and Falsy values
+
+In JavaScript, a truthy value is a value that is considered true when encountered in a Boolean context. All values are truthy unless they are defined as falsy.
+
+JavaScript uses type coercion in Boolean contexts.
+
+Some examples of truthy values in JavaScript: (which will be coerced to true in boolean contexts, and thus execute the if block)
+
+```
+if (true)
+if ({})
+if ([])
+if (42)
+if ("0")
+if ("false")
+if (new Date())
+if (-42)
+if (12n)
+if (3.14)
+if (-3.14)
+if (Infinity)
+if (-Infinity)
+```
+
+![Truthy Values](https://miro.medium.com/max/398/1*pH1E_o1VPZMUtE3J-uZPYQ.png)
+
+A falsy (sometimes written falsey) value is a value that is considered false when encountered in a Boolean context.
+
+JavaScript uses type conversion to coerce any value to a Boolean in contexts that require it, such as conditionals and loops.
+
+There are 8 falsy values:
+
+```
+false	         The keyword false
+0                The number zero
+-0	             The number negative zero
+0n	             BigInt, when used as a boolean, follows the same rule as a Number. 0n is falsy.
+""	             Empty string value
+null	         null - the absence of any value
+undefined	     undefined - the primitive value
+NaN	             NaN - not a number
+```
+
+![Falsy Values](https://miro.medium.com/max/375/1*fYDCaOWdYvuzqBYl_r8XEQ.png)
 
 # Good to know
 
-## 1. Execution context 
+## 1. Execution context
 
 When a JavaScript engine executes a script, it creates execution contexts. Execution context (EC) is defined as the environment in which the JavaScript code is executed. By environment, I mean the value of this, variables, objects, and functions JavaScript code has access to at a particular time.
 
@@ -346,19 +459,18 @@ A. Creation PHASE
 
 - Creation phase is the phase in which the JS engine has called a function but its execution has not started. In the creation phase, JS engine is in the compilation phase and it just scans over the function code to compile the code, it doesn’t execute any code.
 
-- As the parser runs through your code and begins to set up what you've written for translation, it recognizes where you've created variables and where you've created functions. And so it sets up in this creation phase, the memory space for the variables and functions. And it's that step that is somewhat confusingly called hoisting. 
+- As the parser runs through your code and begins to set up what you've written for translation, it recognizes where you've created variables and where you've created functions. And so it sets up in this creation phase, the memory space for the variables and functions. And it's that step that is somewhat confusingly called hoisting.
 
 - All this means is that before your code begins to be executed line by line, the JavaScript engine has already set aside memory space for the variables that you've created in that entire code that you've built, and all of the functions that you've created as well. So those functions and those variables exist in memory. So when the code begins to execute line by line, it can access them.
 
-- However, when it comes to variables, it's a little bit different. You see the function in its entirety is placed into memory space, meaning that the function, its name and the code inside the function is being executed. However the next phase, the execution phase is where it actually executes your code line by line, that's when these kind of assignments are set, where var a = 1. So the JavaScript engine when it sets up the memory space for a, it doesn't know what its value will ultimately end up being until it starts executing its code. So instead, it puts a placeholder called undefined. That placeholder means oh, I don't know what this value is yet. 
+- However, when it comes to variables, it's a little bit different. You see the function in its entirety is placed into memory space, meaning that the function, its name and the code inside the function is being executed. However the next phase, the execution phase is where it actually executes your code line by line, that's when these kind of assignments are set, where var a = 1. So the JavaScript engine when it sets up the memory space for a, it doesn't know what its value will ultimately end up being until it starts executing its code. So instead, it puts a placeholder called undefined. That placeholder means oh, I don't know what this value is yet.
 
 - All variables in JavaScript are initially set to undefined, and functions are sitting in memory in their entirety.
 
-B. Execution PHASE 
+B. Execution PHASE
 
 When the code is executed line-by-line (by JS interpreeter) it can access the variables defined inside Execution Context
 variable assignment are done in this phase
-
 
 <br/ >
 
@@ -370,14 +482,12 @@ The engine executes the function whose execution context is at the top of the st
 
 ![Screenshot1](https://user-images.githubusercontent.com/43414928/94432962-33851480-01b5-11eb-9e8e-558f938867fc.png)
 
-
 ## 3. JavaScript Prototypes
 
-Every JavaScript object has an internal hidden "slot" called [[Prototype]]. You can think of a slot as a property on an object, internal to the JavaScript engine, hidden from the code you write 
+Every JavaScript object has an internal hidden "slot" called [[Prototype]]. You can think of a slot as a property on an object, internal to the JavaScript engine, hidden from the code you write
 
 **Prototype chain**
 The prototype chain mechanism is simple: When you access a property p on object obj, the JavaScript engine will search this property inside obj object. If the engine fails to search, it continues searching in the prototype of obj object and so on until reaching Object.prototype. If after the search has finished, and nothing has been found the result will be undefined
-
 
 Modern JavaScript implementations allow read and/or write access to the [[Prototype]] in the following ways:
 
@@ -385,13 +495,13 @@ Modern JavaScript implementations allow read and/or write access to the [[Protot
 - The extends keyword (configures the prototype chain when using the class syntax),
 - Object.create will set the supplied argument as the [[Prototype]] of the resulting object,
 - Object.getPrototypeOf and Object.setPrototypeOf (get/set the [[Prototype]] after object creation), and
-- The standardized accessor (ie. getter/setter) property named __proto__ (similar to 4.)
+- The standardized accessor (ie. getter/setter) property named **proto** (similar to 4.)
 
-** “The __proto__ is simply a reference to the prototype object from which the instance has inherited”.**
+** “The **proto** is simply a reference to the prototype object from which the instance has inherited”.**
 
 In a language implementing classical inheritance like Java, C# or C++ you start by creating a class--a blueprint for your objects--and then you can create new objects from that class or you can extend the class, defining a new class that augments the original class.
 
-In JavaScript you first create an object (there is no concept of class), then you can augment your own object or create new objects 
+In JavaScript you first create an object (there is no concept of class), then you can augment your own object or create new objects
 
 **Prototype Property: Prototype-based Inheritance**
 Prototype is important in JavaScript because JavaScript does not have classical inheritance based on Classes (as most object oriented languages do), and therefore all inheritance in JavaScript is made possible through the prototype property. JavaScript has a prototype-based inheritance mechanism.Inheritance is a programming paradigm where objects (or Classes in some languages) can inherit properties and methods from other objects (or Classes). In JavaScript, you implement inheritance with the prototype property. For example, you can create a Fruit function (an object, since all functions in JavaScript are objects) and add properties and methods on the Fruit prototype property, and all instances of the Fruit function will inherit all the Fruit’s properties and methods.
@@ -410,12 +520,12 @@ spread syntax refers to the use of an ellipsis of three dots ( … ) to expand 
 
 ```
 const foo = ['hello', 'bonjour', 'konnichiwa'];
-const bar = [...foo]; 
+const bar = [...foo];
 console.log(bar);
 // ['hello', 'bonjour', 'konnichiwa']
 ```
 
-*Difference between spread and assignment operator*
+_Difference between spread and assignment operator_
 
 ```
 const foo = ['hello', 'bonjour', 'konnichiwa'];
@@ -428,7 +538,7 @@ console.log(bar1); // ["hello", "bonjour", "konnichiwa", "a"]
 console.log(bar2); // ["hello", "bonjour", "konnichiwa", "b"]
 ```
 
-Arrays and objects are mutable while strings and int are immutable. So, when we write bar2 = foo,  we are using call by reference. Hence, when we edited bar2.push('b'); the value of foo also changed
+Arrays and objects are mutable while strings and int are immutable. So, when we write bar2 = foo, we are using call by reference. Hence, when we edited bar2.push('b'); the value of foo also changed
 But using spread operator, we are creating two instances
 
 ```
@@ -458,7 +568,6 @@ console.log(friends);//["Annie", "Becky"]
 console.log(others);// {country: "Nigeria", job: "Developer"}
 ```
 
-
 <br/>
 
 ## 3. Destructuring
@@ -466,7 +575,6 @@ console.log(others);// {country: "Nigeria", job: "Developer"}
 The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables.
 
 1. **Arrays** : We can write any name for the parameter(greeting, prononu) and order is important
-
 
 ```
 let introduction = ["Hello", "I" , "am", "Sarah"];
@@ -514,8 +622,8 @@ const arr2 = arr1.map(item => item * 2);
 console.log(arr2);
 ```
 
-
 **b. Filter**
+
 ```
 const persons = [
   { name: 'Peter', age: 16 },
@@ -553,7 +661,6 @@ Closure means that an inner function always has access to the vars and parameter
 ![Screenshot4](https://user-images.githubusercontent.com/43414928/94444548-1146c300-01c4-11eb-867f-a142e24fbb1c.png)
 ![1](https://user-images.githubusercontent.com/43414928/94445453-15bfab80-01c5-11eb-9075-fe8d56d2e5ef.png)
 
-
 Refer : https://dmitripavlutin.com/simple-explanation-of-javascript-closures/
 <br/>
 
@@ -562,8 +669,9 @@ Refer : https://dmitripavlutin.com/simple-explanation-of-javascript-closures/
 They all attach this into function (or object) and the difference is in the function invocation (see below).
 
 - call attaches this into function and executes the function immediately:
+
 ```
-var person = {  
+var person = {
   name: "James Smith",
   hello: function(thing) {
     console.log(this.name + " says hello " + thing);
@@ -576,7 +684,7 @@ person.hello.call({ name: "Jim Smith" }, "world"); // output: "Jim Smith says he
 - bind attaches this into function and it needs to be invoked separately like this:
 
 ```
-var person = {  
+var person = {
   name: "James Smith",
   hello: function(thing) {
     console.log(this.name + " says hello " + thing);
@@ -602,7 +710,7 @@ helloFunc();  // output: Jim Smith says hello world"
 ```
 function personContainer() {
 
-  var person = {  
+  var person = {
      name: "James Smith",
      hello: function() {
        console.log(this.name + " says hello " + arguments[1]);
@@ -618,7 +726,6 @@ personContainer("world", "mars"); // output: "James Smith says hello mars", note
 <br/>
 1. You can use call()/apply() to invoke the function immediately. bind() returns a bound function that, when executed later, will have the correct context ("this") for calling the original function. So bind() can be used when the function needs to be called later in certain events when it's useful.
 
-
 2. Note that when using the apply() function the parameter must be placed in an array. Call() accepts both an array of parameters and a parameter itself.
 
 ```
@@ -627,7 +734,6 @@ greetingJohn();//must be called again
 greeting.call(person,'India');
 greeting.apply(person,['India']);// has an array
 ```
-
 
 **Refernce**
 
@@ -638,7 +744,6 @@ https://medium.com/r?url=https%3A%2F%2Fcodesquery.com%2Fjavascript-call-apply-bi
 ## 7. Hoisting : hoist a flash ie move it to the top
 
 Hoisting is JavaScript's default behavior of moving declarations to the top.In JavaScript, a variable can be declared after it has been used.In other words; a variable can be used before it has been declared
-
 
 <br/>
 
@@ -675,8 +780,6 @@ add3(4);
 
 The first statement returns 7, like the add(3, 4) statement. The second statement defines a new function called add3 that will add 3 to its argument. This is what some people may call a closure. The third statement uses the add3 operation to add 3 to 4, again producing 7 as a result.
 
-
-
 <br/>
 
 ## 9. Event Bubbling and Capturing
@@ -694,7 +797,6 @@ With capturing, the event is first captured by the outermost element and propaga
 
 https://www.youtube.com/watch?v=-bS6u_oQFtc&list=PL7pEw9n3GkoW5bYOhVAtmJlak3ZK7SaDf&index=29
 
-
 <br/> <br/>
 
 ## 11. Asynchronous js
@@ -706,15 +808,14 @@ https://www.youtube.com/watch?v=-bS6u_oQFtc&list=PL7pEw9n3GkoW5bYOhVAtmJlak3ZK7S
 JavaScript is synchronous by default and is single threaded. This means that code cannot create new threads and run in parallel. JavaScript introduced several features that help us with asynchronous code that do not involve using callbacks:
 
 **Reference**
+
 - https://flaviocopes.com/javascript-promises/
 - https://flaviocopes.com/javascript-async-await/
 - https://www.youtube.com/watch?v=IGoAdn-e5II
 
-
 ## 12. JavaScript Design Patterns
 
 https://medium.com/better-programming/javascript-design-patterns-25f0faaaa15
-
 
 ## 13. Iterators and generators
 
@@ -734,10 +835,8 @@ Throttling and debouncing are two ways to optimize event handling.
 
 - Throttling enforces a maximum number of times a function can be called over time. As in "execute this function at most once every 100 milliseconds."
 
-
-*Good demo (codepen)*
+_Good demo (codepen)_
 https://css-tricks.com/the-difference-between-throttling-and-debouncing/
-
 
 <br/>
 
@@ -759,6 +858,7 @@ var o = {
 ```
 
 #### 2. Factory Functions
+
 This is the absolute simplest way to create a family of objects that share the same structure, interface, and implementation. Rather than creating an object literal directly, instead we return an object literal from a function. This way, if we need to create the same type of object multiple times or in multiple places, we only need to invoke a function:
 
 ```
@@ -803,12 +903,12 @@ The new JavaScript features in ES2020 are:
 
 ➡️ Nullish coalescing Operator
 
-*Reference*
-- https://radiant-brushlands-42789.herokuapp.com/medium.com/better-programming/javascript-es2020-features-with-simple-examples-d301dbef2c37 
+_Reference_
+
+- https://radiant-brushlands-42789.herokuapp.com/medium.com/better-programming/javascript-es2020-features-with-simple-examples-d301dbef2c37
 - https://www.freecodecamp.org/news/javascript-new-features-es2020/
 
-<br/> <br/>  <br/>
-
+<br/> <br/> <br/>
 
 # Tricky JavaScript interview questions and answers
 
@@ -819,7 +919,6 @@ b. console.log(5>6>7)
 
 a. console.log(5<6<7) =console.log(true<7)=true
 b. console.log(5>6>7) =console.log(true>7)=false
-
 
 <br/>
 
