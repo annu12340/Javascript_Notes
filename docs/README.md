@@ -17,6 +17,7 @@
 - Timer function
 - Difference between innerHTML and innerText
 - Truthy and Falsy values
+- DOM Manipulation
 
 ### Good to know
 
@@ -46,7 +47,7 @@
 - object creation patterns tutorial - factory , constructor pattern, prototype pattern
 - JavaScript ES2020
 - Tricky JavaScript interview questions and answers
-- DOM Manipulation
+
 ### Good references
 
 1. https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95
@@ -871,28 +872,37 @@ _Reference_
 
 Document Object Model, or DOM for short, represents all page content as objects that can be modified. And Javascript allow us to modify DOM.
 
-With JavaScript you can interact with the DOM to:
-- inspect the page structure
-- access the page metadata and headers
-- edit the CSS styling
-- attach or remove event listeners
-- edit any node in the page
-- change any node attribute
-- .. and much more.
-
-The main 2 objects provided by the DOM API that you you will interact the most with are document and window.
+The main 2 objects provided by the DOM API that you will interact the most with are document and window.
 
  1.  The Window object - The window object represents the window that contains the DOM document.
 window.document points to the document object loaded in the window.
 Properties and methods of this object can be called without referencing window explicitly, because it represents the global object. So, the previous property window.document is usually called just document.
 
- 2. Properties - Here is a list of useful properties you will likely reference a lot:
+ - Properties - Here is a list of useful Window properties you will likely reference a lot:
   >- **console** points to the browser debugging console. Useful to print error messages or logging, using console.log, console.error and other tools (see the Browser DevTools article)
   >- **document** as already said, points to the document object, key to the DOM interactions you will perform
   >- **history** gives access to the History API
   >- **location** gives access to the Location interface, from which you can determine the URL, the protocol, the hash and other useful information.
   >- **localStorage** is a reference to the Web Storage API localStorage object
   >- **sessionStorage** is a reference to the Web Storage API sessionStorage object
+
+- Methods - Here is a list of useful Window Methods you will likely reference a lot:
+>- alert(): which you can use to display alert dialogs
+>- postMessage(): used by the Channel Messaging API
+>- requestAnimationFrame(): used to perform animations in a way that’s both performant and easy on the CPU
+>- setInterval(): call a function every n milliseconds, until the interval is cleared with clearInterval()
+>- clearInterval(): clears an interval created with setInterval()
+>- setTimeout(): execute a function after ‘n’ milliseconds
+>- setImmediate(): execute a function as soon as the browser is ready
+>- addEventListener(): add an event listener to the document
+>- removeEventListener(): remove an event listener from the document
+
+2. Document - The Document interface represents any web page loaded in the browser and serves as an entry point into the web page's content, which is the DOM tree.
+
+Note:- 
+- Window is the main JavaScript object root, also known as the global object in a browser, also can be treated as the root of the document object model. You can access it as window.
+- Document is the main object of the potentially visible/rendered document object model/DOM.
+
 
 Example of a DOM tree:- 
 
