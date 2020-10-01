@@ -330,40 +330,39 @@ There are two methods for it:
 <br/>
 <br />
 
-# 6. Cookies
+## 6. Cookies
 
 Cookies are the most efficient method of remembering and tracking preferences, purchases, commissions, and other information required for better visitor experience or site statistics.
 
-<hr />
 Cookies are a plain text data record of 5 variable-length fields −
 
-## Expires − 
+### Expires − 
           The date the cookie will expire. If this is blank, the cookie will expire when the visitor quits the browser.
 
-## Domain − 
+### Domain − 
           The domain name of your site.
 
-## Path − 
+### Path − 
           The path to the directory or web page that set the cookie. This may be blank if you want to retrieve the cookie from any directory or page.
 
-## Secure − 
+### Secure − 
           If this field contains the word "secure", then the cookie may only be retrieved with a secure server. If this field is blank, no such restriction exists.
 
-## Name=Value − 
+### Name=Value − 
           Cookies are set and retrieved in the form of key-value pairs
           
 <hr />
 
-# Functions on Cookies
+## Functions on Cookies
 
-## Create a Cookie - 
+### Create a Cookie - 
           document.cookie = "username=Annu; expires=Thu, 1 Oct 2020 10:00:00 UTC";
-## Read a Cookie -
+### Read a Cookie -
           var x = document.cookie;
-## Change a Cookie -  
+### Change a Cookie -  
           You can change a cookie the same way as you create it:
           document.cookie = "username=John Smith; expires=Thu, 1 Oct 2020 10:00:00 UTC; path=/";
-## Delete a Cookie -
+### Delete a Cookie -
           document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
           
 <hr />
