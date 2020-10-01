@@ -39,14 +39,6 @@ https://annu12340.github.io/Javascript-Notes/
 
 ##Infinities
 
- Infinity is a property of the global object , or in other words, a variable in global scope. 
- The initial value of Infinity is Number.POSITIVE_INFINITY . The JavaScript keyword Infinity 
- points to the same internal value as POSITIVE_INFINITY. For practical purposes, "Infinity" can 
- be used interchangeably with "Number.POSITIVE_INFINITY" in your scripts.
- 
- **alert( Number.MAX_VALUE + Number.MAX_VALUE ); //infinity**
- **alert( -2 * Number.MAX_VALUE ); // Negative infinity**
- 
   ### Positive INFINITY
   
 		POSITIVE_INFINITY is displayed when a number exceeds the upper limit of the floating 
