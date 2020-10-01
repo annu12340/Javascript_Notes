@@ -43,7 +43,9 @@
 - throttle vs debounce
 - object creation patterns tutorial - factory , constructor pattern, prototype pattern
 - JavaScript ES2020
+- Local storage vs Session storage
 - Tricky JavaScript interview questions and answers
+
 
 <hr/>
 
@@ -802,7 +804,25 @@ The new JavaScript features in ES2020 are:
 - https://radiant-brushlands-42789.herokuapp.com/medium.com/better-programming/javascript-es2020-features-with-simple-examples-d301dbef2c37 
 - https://www.freecodecamp.org/news/javascript-new-features-es2020/
 
-<br/> <br/>  <br/>
+<br/> 
+
+## 16. Local storage vs Session storage
+
+localStorage and sessionStorage accomplish the exact same thing and have the same API, but with sessionStorage the data is persisted only until the window or tab is closed, while with localStorage the data is persisted until the user manually clears the browser cache or until your web app clears the data. The examples in this post are for localStorage, but the same syntax works for sessionStorage.
+
+```
+Create key/value pair entries with localStorage.setItem, providing a key and a value:
+
+let key = 'Item 1';
+localStorage.setItem(key, 'Value');
+
+``` 
+
+**Reference**
+
+- https://www.digitalocean.com/community/tutorials/js-introduction-localstorage-sessionstorage
+
+<br/>  <br/>
 
 
 # Tricky JavaScript interview questions and answers
