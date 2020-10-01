@@ -37,7 +37,7 @@ https://annu12340.github.io/Javascript-Notes/
 - JavaScript ES2020
 - Tricky JavaScript interview questions and answers
 
-##Infinities
+## Infinities
 
   ### Positive INFINITY
   
