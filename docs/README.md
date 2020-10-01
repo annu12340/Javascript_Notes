@@ -808,6 +808,38 @@ The new JavaScript features in ES2020 are:
 - https://www.freecodecamp.org/news/javascript-new-features-es2020/
 
 <br/> <br/>  <br/>
+## 19. Iterators 
+Iterators provide mechanism to iterate over collections. Iterators are Objects whichh uses iterator protocols.
+- After defining iterator next() method is used to iterate over the collection.
+
+```
+
+let numbers = new Sequence(1,2,3,4,5,6);
+let iterator = numbers[Symbol.iterator]();
+
+let result = iterator.next();
+
+while(!result.done) {
+  console.log(result.value);
+  result=iterator.next()
+}
+
+```
+Can we use iterators like for loops?
+- No in order to use the iterator we need to call iterator method which System.iterator has.
+
+```
+//Wrong
+let arr = [1,2,3,4,5,6];
+arr.next();
+
+//Correct
+let arr = [1,2,3,4,5,6]
+let iterator = arr[Symbol.iterator]();
+
+iterator.next();
+
+```
 
 
 # Tricky JavaScript interview questions and answers
