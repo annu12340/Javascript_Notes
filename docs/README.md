@@ -14,7 +14,7 @@
 - Coercion
 - Passing by Value vs. Reference
 - Timer function
-
+- Difference between innerHTML and innerText
 
 ### Good to know
 - Execution context 
@@ -325,6 +325,27 @@ There are two methods for it:
 ![2e0aebffb46846a79c438495256cea925d6fcd5a288995cfc70bdda1ffbd7d8c_1](https://user-images.githubusercontent.com/43414928/94438091-451dea80-01bc-11eb-9e31-28af25a989d1.jpg)
 
 <br/>
+
+### 6. Difference between innerHTML and innerText
+
+The innerHTML tag returns the text including all spacing and inner element tags.
+On the other hand, innerText property returns just the text, without spacing and inner element tags.
+
+In simple words, innerText retrieves and sets the content of the tag as plain text, whereas innerHTML retrieves and sets the content in HTML format.
+
+**Example**
+
+If HTML has the following tag,
+```
+<p id="example">This element has extra spacing   and contains <span>a span element</span>.</p>
+```
+and the JavaScript has the following code,
+```
+var iText = document.getElementById("example").innerText
+var iHtml = document.getElementById("example").innerHTML
+```
+The value stored in ```iText``` would be ```This element has extra spacing and contains a span element.``` and ```iHTML``` would have ```This element has extra spacing   and contains <span>a span element</span>.```.
+
 
 # Good to know
 
