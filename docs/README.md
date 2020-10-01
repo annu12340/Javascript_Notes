@@ -704,15 +704,16 @@ Important point to note here is that calling a generator function does not execu
 In short, a generator appears to be a function but it behaves like an iterator.
 
 Syntax :
+<div>
 function* generatorFunctionName([param[, param[, ... param]]]) {
    statements
-}
+}  
 
 name : Function name
 param | Optional : Formal parameter for the function.
 statements : Comprising the body of the function.
 
-function* generator(i) {
+  function* generator(i) {
   yield i;
   yield i + 1;
 }
@@ -720,7 +721,7 @@ const gen = generator(1);
 console.log(gen.next().value);
 // expected output: 1
 console.log(gen.next().value);
-// expected output: 2
+// expected output: 2 </div>
 
 * Generators are a special class of functions that simplify the task of writing iterators.
 * A generator is a function that produces a sequence of results instead of a single value, i.e you generate ​a series of values.
