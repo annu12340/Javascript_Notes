@@ -24,7 +24,6 @@
 - Error Handling
 =======
 - Difference between innerHTML and innerText
->>>>>>> d9076e12a32667ed37ebb08e8550853a6c7926be
 
 ### Good to know
 - Execution context 
@@ -341,12 +340,12 @@ Compile-time errors are a class of errors which prevents the program from compil
 - calling a non-existing method
 - wrong source code file name
 
-In the case of JavaScript, compile-time errors occur at interpret time. For example, in the below code, a syntax error occurs because it is missing semi-colon ';' at the end of the print() function invocation.
+In the case of JavaScript, compile-time errors occur at interpret time. For example, in the below code, a syntax error occurs because it is missing left Parentheses '(' in the print function/method invocation.
 
 ```
 <script type = "text/javascript">
    <!--
-      window.print()
+      window.print);
    //-->
 </script>
 ```
