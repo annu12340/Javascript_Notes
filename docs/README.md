@@ -326,6 +326,7 @@ There are two methods for it:
 ![2e0aebffb46846a79c438495256cea925d6fcd5a288995cfc70bdda1ffbd7d8c_1](https://user-images.githubusercontent.com/43414928/94438091-451dea80-01bc-11eb-9e31-28af25a989d1.jpg)
 
 <br/>
+<br />
 
 # 6. Cookies
 
@@ -348,6 +349,20 @@ Cookies are a plain text data record of 5 variable-length fields −
 
 ## Name=Value − 
           Cookies are set and retrieved in the form of key-value pairs
+          
+<hr />
+
+# Functions on Cookies
+
+## Create a Cookie - 
+          document.cookie = "username=Annu; expires=Thu, 1 Oct 2020 10:00:00 UTC";
+## Read a Cookie -
+          var x = document.cookie;
+## Change a Cookie -  
+          You can change a cookie the same way as you create it:
+          document.cookie = "username=John Smith; expires=Thu, 1 Oct 2020 10:00:00 UTC; path=/";
+## Delete a Cookie -
+          document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
           
 <hr />
 <br />
