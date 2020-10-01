@@ -33,7 +33,7 @@
 - Currying function
 - Event Bubbling and Capturing
 - Debugging
-
+- Local storage vs Session storage
 
 <br/>
 
@@ -43,9 +43,7 @@
 - throttle vs debounce
 - object creation patterns tutorial - factory , constructor pattern, prototype pattern
 - JavaScript ES2020
-- Local storage vs Session storage
 - Tricky JavaScript interview questions and answers
-
 
 <hr/>
 
@@ -806,7 +804,7 @@ The new JavaScript features in ES2020 are:
 
 <br/> 
 
-## 16. Local storage vs Session storage
+## 17. Local storage vs Session storage
 
 localStorage and sessionStorage accomplish the exact same thing and have the same API, but with sessionStorage the data is persisted only until the window or tab is closed, while with localStorage the data is persisted until the user manually clears the browser cache or until your web app clears the data. The examples in this post are for localStorage, but the same syntax works for sessionStorage.
 
@@ -826,6 +824,12 @@ localStorage.setItem(key, 'Value');
 
 
 # Tricky JavaScript interview questions and answers
+
+
+### Good references
+
+1. https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95
+
 
 **Find output:**
 
