@@ -16,6 +16,8 @@
 - Timer function
 - Cookies
 
+=======
+- Difference between innerHTML and innerText
 
 ### Good to know
 - Execution context 
@@ -113,9 +115,9 @@ run();
 #### A. Parameters vs arguments
 
 ```
-Function hi(a,b) // a and b are parameters
+function hi(a,b) // a and b are parameters
 {
-Console.log(“hi “,a,b)
+console.log(“hi “,a,b)
 }
 
 Hi(“Riya”,”James”)	// Riya and James are arguments
@@ -159,14 +161,14 @@ All arrow functions should be anonymous
 ```
 CONVERTION
 
-Const hi = Function (a,b) 
+const hi = function (a,b) 
 {
-Console.log(“hi “,a,b)
+console.log(“hi “,a,b)
 }
 
 Remove ‘function’ and add => btw parameter and the brackets
 
-Const hi=(a,b)=>{…}
+const hi=(a,b)=>{…}
 
 ```
 
@@ -187,14 +189,14 @@ Following is the list of primitive data types in javascript.
 7. Symbol
 
 ```
-Typeof NaN  // “number”
+typeof NaN  // “number”
 
-Typeof Infinity  // “number”
+typeof Infinity  // “number”
 
 
 
-Let a;
-Console.log(a) //undefined
+let a;
+console.log(a) //undefined
 
 -	Undefined is used when we declare a variable but haven’t assigned a value to it
 -	We use null to explicitly tell that there is nothing
@@ -366,6 +368,27 @@ Cookies are a plain text data record of 5 variable-length fields −
           
 <hr />
 <br />
+
+
+### 6. Difference between innerHTML and innerText
+
+The innerHTML tag returns the text including all spacing and inner element tags.
+On the other hand, innerText property returns just the text, without spacing and inner element tags.
+
+In simple words, innerText retrieves and sets the content of the tag as plain text, whereas innerHTML retrieves and sets the content in HTML format.
+
+**Example**
+
+If HTML has the following tag,
+```
+<p id="example">This element has extra spacing   and contains <span>a span element</span>.</p>
+```
+and the JavaScript has the following code,
+```
+var iText = document.getElementById("example").innerText
+var iHtml = document.getElementById("example").innerHTML
+```
+The value stored in ```iText``` would be ```This element has extra spacing and contains a span element.``` and ```iHTML``` would have ```This element has extra spacing   and contains <span>a span element</span>.```.
 
 
 # Good to know
