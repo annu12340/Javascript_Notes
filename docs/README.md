@@ -14,6 +14,7 @@
 - Coercion
 - Passing by Value vs. Reference
 - Timer function
+- Cookies
 
 
 ### Good to know
@@ -325,6 +326,32 @@ There are two methods for it:
 ![2e0aebffb46846a79c438495256cea925d6fcd5a288995cfc70bdda1ffbd7d8c_1](https://user-images.githubusercontent.com/43414928/94438091-451dea80-01bc-11eb-9e31-28af25a989d1.jpg)
 
 <br/>
+
+# 6. Cookies
+
+Cookies are the most efficient method of remembering and tracking preferences, purchases, commissions, and other information required for better visitor experience or site statistics.
+
+<hr />
+Cookies are a plain text data record of 5 variable-length fields −
+
+## Expires − 
+          The date the cookie will expire. If this is blank, the cookie will expire when the visitor quits the browser.
+
+## Domain − 
+          The domain name of your site.
+
+## Path − 
+          The path to the directory or web page that set the cookie. This may be blank if you want to retrieve the cookie from any directory or page.
+
+## Secure − 
+          If this field contains the word "secure", then the cookie may only be retrieved with a secure server. If this field is blank, no such restriction exists.
+
+## Name=Value − 
+          Cookies are set and retrieved in the form of key-value pairs
+          
+<hr />
+<br />
+
 
 # Good to know
 
