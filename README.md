@@ -12,6 +12,8 @@ https://annu12340.github.io/Javascript-Notes/
 - Coercion
 - Passing by Value vs. Reference
 - Timer function
+- Errors
+- Error Handling
 
 
 ### Advanced

@@ -14,7 +14,13 @@
 - Coercion
 - Passing by Value vs. Reference
 - Timer function
+- Errors
 
+  A. Compile-time errors
+
+  B. Run-time errors
+
+- Error Handling
 
 ### Good to know
 - Execution context 
@@ -310,13 +316,74 @@ https://codeburst.io/javascript-passing-by-value-vs-reference-explained-in-plain
 
 <br/>
 
-## 5. Timer function
+## 6. Timer function
 
 There are two methods for it:
 
 - setTimeout allows us to run a function once after the interval of time.
 - setInterval allows us to run a function repeatedly, starting after the interval of time, then repeating continuously at that interval.
 
+## 7. Errors
+
+![error](https://i.ibb.co/jD2kG28/e.jpg)
+
+""To err is human..."  Everyone makes a mistake, even the seasoned developer. Hence, it's essential to know about different errors and how to solve them. Errors can be divided into two groups: compile-time errors and run-time errors.
+
+#### A. Compile-time errors
+
+Compile-time errors are a class of errors which prevents the program from compiling:
+
+- syntax error: incorrect keyword, a forgotten symbol
+- calling a non-existing method
+- wrong source code file name
+
+In the case of JavaScript, compile-time errors occur at interpret time. For example, in the below code, a syntax error occurs because it is missing semi-colon ';' at the end of the print() function invocation.
+
+```
+<script type = "text/javascript">
+   <!--
+      window.print()
+   //-->
+</script>
+```
+To avoid such errors, developers use a modern Integrated Development Environment with a code analyzer.
+
+#### B. Run-time errors
+
+Run-time errors (also known as "exceptions") are errors when the program is running. Run-time errors will cause your program to behave unexpectedly or may even stop the execution.
+
+There are two subtypes of run-time errors:
+
+- logic errors – program produces a wrong result because of incorrect code. 
+For example, for addition writing statement as "sum = x - y;"
+- unhandled exceptional events like division by zero
+
+To avoid such errors, developers must learn debugging skills, write automated tests, and implement code reviews.
+
+## 8. Error Handling
+
+![error-handling](https://i.ibb.co/Rcdgf4n/h.jpg)
+
+
+When your program has a "broken" line of code, your program dies, and after stopping program execution, an error message is printed on the console.
+
+But can we add some immunity to our program so that rather than dying, it can handle the error?
+
+Yes, we can! "try..catch" statement lets us handle the error and do something useful. For example, rather than crashing when a number is divided by zero, we can print a message that the divider can't be zero.
+
+```
+try {
+
+  // code where exception can exist
+
+} catch (err) {
+
+  // steps that should be taken to handle exception
+
+}
+```
+
+<br/>
  <hr/>
  
 <br/><br/>
