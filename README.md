@@ -29,6 +29,7 @@ https://annu12340.github.io/Javascript-Notes/
 
 <br/>
 
+- Local storage vs Session storage
 - Asynchronous js
 - JavaScript Design Patterns
 - Iterators and generators
