@@ -808,12 +808,24 @@ The new JavaScript features in ES2020 are:
 - https://www.freecodecamp.org/news/javascript-new-features-es2020/
 
 <br/> <br/>  <br/>
+
 ## 19. Iterators 
-Iterators provide mechanism to iterate over collections. Iterators are Objects whichh uses iterator protocols.
+
+Iterators provide mechanism to iterate over collections.
+
+Following values are iterables:
+- Arrays
+- Strings
+- Maps
+- Sets
+- DOM data structures (work in progress)
+
+Plain objects are not iterable!
+
+Iterators are Objects which uses iterator protocols.
 - After defining iterator next() method is used to iterate over the collection.
 
 ```
-
 let numbers = new Sequence(1,2,3,4,5,6);
 let iterator = numbers[Symbol.iterator]();
 
@@ -823,10 +835,35 @@ while(!result.done) {
   console.log(result.value);
   result=iterator.next()
 }
+```
+
+What is the difference between loops and iterators?
+
+- If we have to iterate over arrays we can use loops as array use indices.
+```
+let arr = [1,2,3,4]
+for(let index = 0; i< arr.length; i++){
+  console.log(arr[index])
+}
+```
+
+- The above loop isn't always possible such cases are unordered collections so we use the following loops for such collections.
 
 ```
-Can we use iterators like for loops?
-- No in order to use the iterator we need to call iterator method which System.iterator has.
+let mySet = new Set();
+mySet.add(1);
+mySet.add(2);
+mySet.add(3);
+mySet.add(4);
+for (let item of mySet) {
+  console.log(item)
+}
+```
+
+The iterator provides advantage in cases 
++ Where you want to move over the collection in both forward and backward direction.
++ When you want to remove elements from collections safely while iterating over collections.
+When you want to do more than just iterating over collection Iterator can be used. 
 
 ```
 //Wrong
@@ -840,8 +877,12 @@ let iterator = arr[Symbol.iterator]();
 iterator.next();
 
 ```
+**References**
+- https://codeburst.io/a-simple-guide-to-es6-iterators-in-javascript-with-examples-189d052c3d8e
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols
 
-
+<br><br>
 # Tricky JavaScript interview questions and answers
 
 **Find output:**
