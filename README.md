@@ -37,6 +37,51 @@ https://annu12340.github.io/Javascript-Notes/
 - JavaScript ES2020
 - Tricky JavaScript interview questions and answers
 
+##Infinities
+
+ Infinity is a property of the global object , or in other words, a variable in global scope. 
+ The initial value of Infinity is Number.POSITIVE_INFINITY . The JavaScript keyword Infinity 
+ points to the same internal value as POSITIVE_INFINITY. For practical purposes, "Infinity" can 
+ be used interchangeably with "Number.POSITIVE_INFINITY" in your scripts.
+ 
+ **alert( Number.MAX_VALUE + Number.MAX_VALUE ); //infinity**
+ **alert( -2 * Number.MAX_VALUE ); // Negative infinity**
+ 
+  ### Positive INFINITY
+  
+		POSITIVE_INFINITY is displayed when a number exceeds the upper limit of the floating 
+		point numbers, which is **1.797693134862315E+308**
+		
+		**alert(Math.pow(10, 1000)); /* Infinity */**
+		
+  ### Negative INFINITY
+  
+        NEGATIVE_INFINITY is displayed when a number exceeds the lower limit of the floating 
+		point numbers, which is **-1.797693134862316E+308.**
+		
+  
+  **POSITIVE_INFINITY** vs. **MAX_VALUE** 
+  The value of the MAX_VALUE property is the largest number 
+  your JavaScript interpreter can handle. Larger value will be viewed as POSITIVE_INFINITY.
+
+  
+  **NEGATIVE_INFINITY** vs. **MIN_VALUE** 
+  The value of the MIN_VALUE property is the smallest 
+  (closest to zero) number your JavaScript interpreter can handle, while NEGATIVE_INFINITY is 
+  the largest negative number the JavaScript interpreter can represent.
+  The value of NEGATIVE_INFINITY and POSITIVE_INFINITY are read-only : they cannot be changed by 
+  your scripts; they are returned by JavaScript whenever a function or operation returns a number 
+  larger than the MAX_VALUE the JavaScript interpreter can handle.
+  
+  The script below illustrate how the JavaScript interpreter understands the concept of infinity (anything out of bound is infinite).
+
+ 
+ **  alert( Number.NEGATIVE_INFINITY === -2 * Number.MAX_VALUE ); //true**
+
+  The above script return "true" because JavaScript interpreter understands the concept, 
+  the negative infinity identical to the negative double of the finite MAX_VALUE property.
+
+
 
 
 ### CSS Notes
