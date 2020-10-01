@@ -703,6 +703,9 @@ We can exit and re-entered the generator function later on. In case of re-entran
 Important point to note here is that calling a generator function does not execute its body immediately, in fact it returns an iterator object for the function.
 In short, a generator appears to be a function but it behaves like an iterator.
 
+* Generators are a special class of functions that simplify the task of writing iterators.
+* A generator is a function that produces a sequence of results instead of a single value, i.e you generate ​a series of values.
+
 ```
 Syntax :
 
@@ -724,10 +727,8 @@ const gen = generator(1);
 console.log(gen.next().value);
 // expected output: 1
 console.log(gen.next().value);
-// expected output: 2 </div>
+// expected output: 2 
 ```
-* Generators are a special class of functions that simplify the task of writing iterators.
-* A generator is a function that produces a sequence of results instead of a single value, i.e you generate ​a series of values.
 
 <br/> <br/>
 
