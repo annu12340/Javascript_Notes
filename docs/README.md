@@ -14,6 +14,7 @@
 - Coercion
 - Passing by Value vs. Reference
 - Timer function
+- Difference between Attribute and Property
 
 
 ### Good to know
@@ -53,7 +54,7 @@
 <hr/>
 
 
-# Begineer
+# Beginner
 
 ![44d0f9f5f90db6a3bc8542642cb38dbe9f10fec1cdadb7264fb7962751f61393_1](https://user-images.githubusercontent.com/43414928/94434636-bc9d4b00-01b7-11eb-8671-4f791e20b958.jpg)
 
@@ -310,7 +311,7 @@ https://codeburst.io/javascript-passing-by-value-vs-reference-explained-in-plain
 
 <br/>
 
-## 5. Timer function
+## 6. Timer function
 
 There are two methods for it:
 
@@ -326,6 +327,17 @@ There are two methods for it:
 
 <br/>
 
+## 7. Difference between Attribute and Property
+- Attributes provide additional information about the HTML elements, attributes are always specified in the start tag and they usually come in name/value pairs.
+- Properties are the values associated with a JavaScript object, these objects are collection of unordered properties and these properties can be usually be changed, added, and deleted.
+
+  While writing HTML code, we can define attributes on our HTML elements. Then, once the browser parses our code, a corresponding DOM(Document Object Model) node will be created. This node is an object, and therefore it has properties.
+  
+For example:  
+  ```
+  <input id="inputId" type="text" value="Name:">
+  ```
+The id property is a reflected property for the id attribute.Getting the property reads the attribute value, and setting the property writes the attribute value.
 # Good to know
 
 ## 1. Execution context 
