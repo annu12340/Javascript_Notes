@@ -3,7 +3,7 @@ https://annu12340.github.io/Javascript-Notes/
 
 <br/><br/>
 
-# Index
+## Index
 
 ### Beginner
 - let vs var vs const
@@ -21,7 +21,7 @@ https://annu12340.github.io/Javascript-Notes/
 - Higher-Order function
 - Closures
 - call() , apply() and bind()
-- hoisting : hoist a flash ie move it to the top
+- hoisting : hoist a flash i.e move it to the top
 - Currying function
 - Event Bubbling and Capturing
 - Debugging
