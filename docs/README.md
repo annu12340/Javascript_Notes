@@ -330,6 +330,7 @@ There are two methods for it:
 ## 7. Difference between Attribute and Property
 - Attributes provide additional information about the HTML elements, attributes are always specified in the start tag and they usually come in name/value pairs.
 - Properties are the values associated with a JavaScript object, these objects are collection of unordered properties and these properties can be usually be changed, added, and deleted.
+- Properties are accessed from DOM (Document Object Model) nodes.
 
   While writing HTML code, we can define attributes on our HTML elements. Then, once the browser parses our code, a corresponding DOM(Document Object Model) node will be created. This node is an object, and therefore it has properties.
   
