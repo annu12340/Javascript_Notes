@@ -320,15 +320,13 @@ There are two methods for it:
 
   ### Positive INFINITY
   
-		POSITIVE_INFINITY is displayed when a number exceeds the upper limit of the floating 
-		point numbers, which is **1.797693134862315E+308**
+		POSITIVE_INFINITY is displayed when a number exceeds the upper limit of the floating point numbers, which is  "1.797693134862315E+308"
 		
-		**alert(Math.pow(10, 1000)); /* Infinity */**
+		 alert(Math.pow(10, 1000)); /* Infinity */  
 		
   ### Negative INFINITY
   
-               NEGATIVE_INFINITY is displayed when a number exceeds the lower limit of the floating 
-		point numbers, which is **-1.797693134862316E+308.**
+               NEGATIVE_INFINITY is displayed when a number exceeds the lower limit of the floating point numbers, which is "-1.797693134862316E+308".
 		
   **POSITIVE_INFINITY** vs. **MAX_VALUE** (or **NEGATIVE_INFINITY** vs. **MIN_VALUE** )
    1. The value of the MAX_VALUE property is the largest number your JavaScript interpreter can             handle. Larger value will be viewed as POSITIVE_INFINITY.
