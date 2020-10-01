@@ -44,9 +44,9 @@ https://annu12340.github.io/Javascript-Notes/
 
   * Positive INFINITY
   
-		POSITIVE_INFINITY is displayed when a number exceeds the upper limit of the floating point numbers, which is  "1.797693134862315E+308"
+    POSITIVE_INFINITY is displayed when a number exceeds the upper limit of the floating point numbers, which is  "1.797693134862315E+308"
 		
-		 alert(Math.pow(10, 1000)); /* Infinity */  
+           alert(Math.pow(10, 1000)); /* Infinity */  
 		
   * Negative INFINITY
   
