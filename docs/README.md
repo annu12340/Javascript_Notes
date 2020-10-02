@@ -15,12 +15,12 @@
 - Coercion
 - Passing by Value vs. Reference
 - Timer function
+- Difference between Attribute and Property
 - Cookies
-
-=======
 - Difference between innerHTML and innerText
 - Truthy and Falsy values
 - DOM Manipulation
+
 
 ### Good to know
 
@@ -58,7 +58,9 @@
 
 <hr/>
 
+
 # Begineer
+
 
 ![44d0f9f5f90db6a3bc8542642cb38dbe9f10fec1cdadb7264fb7962751f61393_1](https://user-images.githubusercontent.com/43414928/94434636-bc9d4b00-01b7-11eb-8671-4f791e20b958.jpg)
 
@@ -316,7 +318,7 @@ https://codeburst.io/javascript-passing-by-value-vs-reference-explained-in-plain
 
 <br/>
 
-## 5. Timer function
+## 6. Timer function
 
 There are two methods for it:
 
@@ -334,7 +336,7 @@ There are two methods for it:
 <br/>
 <br />
 
-## 6. Cookies
+## 7. Cookies
 
 Cookies are the most efficient method of remembering and tracking preferences, purchases, commissions, and other information required for better visitor experience or site statistics.
 
@@ -373,7 +375,21 @@ Cookies are a plain text data record of 5 variable-length fields −
 <br />
 
 
-### 6. Difference between innerHTML and innerText
+
+## 8. Difference between Attribute and Property
+- Attributes provide additional information about the HTML elements, attributes are always specified in the start tag and they usually come in name/value pairs.
+- Properties are the values associated with a JavaScript object, these objects are collection of unordered properties and these properties can be usually be changed, added, and deleted.
+- Properties are accessed from DOM (Document Object Model) nodes.
+
+  While writing HTML code, we can define attributes on our HTML elements. Then, once the browser parses our code, a corresponding DOM(Document Object Model) node will be created. This node is an object, and therefore it has properties.
+  
+**Example**  
+  ```
+  <input id="inputId" type="text" value="Name:">
+  ```
+The id property is a reflected property for the id attribute.Getting the property reads the attribute value, and setting the property writes the attribute value.
+
+## 9. Difference between innerHTML and innerText
 
 The innerHTML tag returns the text including all spacing and inner element tags.
 On the other hand, innerText property returns just the text, without spacing and inner element tags.
@@ -397,7 +413,7 @@ var iHtml = document.getElementById("example").innerHTML
 
 The value stored in `iText` would be `This element has extra spacing and contains a span element.` and `iHTML` would have `This element has extra spacing and contains <span>a span element</span>.`.
 
-## 7. Truthy and Falsy values
+## 10. Truthy and Falsy values
 
 In JavaScript, a truthy value is a value that is considered true when encountered in a Boolean context. All values are truthy unless they are defined as falsy.
 
@@ -445,10 +461,94 @@ NaN	             NaN - not a number
 <br/>
 
 
+## 11.DOM Manipulation
+
+Document Object Model, or DOM for short, represents all page content as objects that can be modified. And Javascript allow us to modify DOM.
+
+The main 2 objects provided by the DOM API that you will interact the most with are document and window.
+
+ 1.  The Window object - The window object represents the window that contains the DOM document.
+window.document points to the document object loaded in the window.
+Properties and methods of this object can be called without referencing window explicitly, because it represents the global object. So, the previous property window.document is usually called just document.
+
+ - Properties - Here is a list of useful Window properties you will likely reference a lot:
+  >- **console** points to the browser debugging console. Useful to print error messages or logging, using console.log, console.error and other tools (see the Browser DevTools article)
+  >- **document** as already said, points to the document object, key to the DOM interactions you will perform
+  >- **history** gives access to the History API
+  >- **location** gives access to the Location interface, from which you can determine the URL, the protocol, the hash and other useful information.
+  >- **localStorage** is a reference to the Web Storage API localStorage object
+  >- **sessionStorage** is a reference to the Web Storage API sessionStorage object
+
+- Methods - Here is a list of useful Window Methods you will likely reference a lot:
+>- alert(): which you can use to display alert dialogs
+>- postMessage(): used by the Channel Messaging API
+>- requestAnimationFrame(): used to perform animations in a way that’s both performant and easy on the CPU
+>- setInterval(): call a function every n milliseconds, until the interval is cleared with clearInterval()
+>- clearInterval(): clears an interval created with setInterval()
+>- setTimeout(): execute a function after ‘n’ milliseconds
+>- setImmediate(): execute a function as soon as the browser is ready
+>- addEventListener(): add an event listener to the document
+>- removeEventListener(): remove an event listener from the document
+
+2. Document - The Document interface represents any web page loaded in the browser and serves as an entry point into the web page's content, which is the DOM tree.
+
+Note:- 
+- Window is the main JavaScript object root, also known as the global object in a browser, also can be treated as the root of the document object model. You can access it as window.
+- Document is the main object of the potentially visible/rendered document object model/DOM.
+
+
+Example of a DOM tree:- 
+
+Representation of a portion of the DOM pointing to the head and body tags:
+![](https://flaviocopes.com/dom/dom-body-head.png)
+
+Tags are element nodes (or just elements) and form the tree structure: <html> is at the root, then <head> and <body> are its children, etc.
+
+#### **1. Traversing the DOM**
+All operations on the DOM start with the document object. That’s the main “entry point” to DOM. From it we can access any node.
+> ![](https://i.imgur.com/NvMOqdb.png)
+
+#### **2. Getting the parent**
+You can you can use **Node.parentNode** or **Node.parentElement** (where Node means a node in the DOM).
+> ![](https://i.imgur.com/ojExGs7.png)
+
+#### **3. Getting the children**
+- To access all the Children Element Nodes of a node, use **Node.childNodes**.
+> ![](https://i.imgur.com/5MWf3Fy.png)
+
+- To get the first child Element Node, use **Node.firstElementChild**. To get the last child Element Node, use **Node.lastElementChild**:
+> ![](https://i.imgur.com/eamCRc4.png)
+
+- **Node.firstChild** - It is a read-only property returns the node's first child in the tree, or null if the node has no children. If the node is a Document, it returns the first node in the list of its direct children.
+
+- **Node.lastChild** - It is a read-only property returns the last child of the node. If its parent is an element, then the child is generally an element node, a text node, or a comment node. It returns null if there are no child elements.
+> ![](https://i.imgur.com/9Z8LoSC.png)
+
+#### **4. Modifying the DOM** 
+The DOM offers various methods to edit the nodes of the page and alter the document tree with:-
+- **document.createElement()**: creates a new Element Node
+- **document.createTextNode()**: creates a new Text Node
+you can create new elements, and add them to the DOM elements you want as children, by using document.appendChild():
+```
+const div = document.createElement('div')
+div.appendChild(document.createTextNode('Hello world!'))
+```
+- **first.removeChild(second)** removes the child node “second” from the node “first”.
+- **document.insertBefore(newNode, existingNode)** inserts “newNode” as a sibling of “existingNode”, placing it before that in the DOM tree structure.
+- **element.appendChild(newChild)** alters the tree under “element”, adding a new child Node “newChild” to it, after all the other children.
+- **element.prepend(newChild)** alters the tree under “element”, adding a new child Node “newChild” to it, before other child elements. You can pass one or more child Nodes, or even a string which will be interpreted as a Text node.
+- **element.replaceChild(newChild, existingChild)** alters the tree under “element”, replacing “existingChild” with a new Node “newChild”.
+- **element.insertAdjacentElement(position, newElement)** inserts “newElement” in the DOM, positioned relatively to “element” depending on “position” parameter value. See the possible values.
+- **element.textContent = 'something'** changes the content of a Text node to “something”.
+
+**Reference**
+
+
 - https://javascript.info/
 - https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model
 
 <br/>
+
 # Good to know
 
 ## 1. Execution context
@@ -955,8 +1055,84 @@ _Reference_
 
 
 
-<br/> <br/>  <br/>
+## 19. Iterators 
 
+
+Iterators are a new way to loop over any collection in JavaScript.
+An iterable is an object that can return an iterator using the iter() function; while an iterator is an object that keeps state and produces the next value when you call the next() function on it.
+
+Following values are iterables:
+- Arrays
+- Strings
+- Maps
+- Sets
+- DOM data structures (work in progress)https://github.com/TroyTae/game-of-life/blob/master/README.md
+
+Plain objects are not iterable!
+
+Iterators are Objects which uses iterator protocols.
+- After defining iterator next() method is used to iterate over the collection.
+
+```
+let numbers = new Sequence(1,2,3,4,5,6);
+let iterator = numbers[Symbol.iterator]();
+
+let result = iterator.next();
+
+while(!result.done) {
+  console.log(result.value);
+  result=iterator.next()
+}
+```
+
+What is the difference between loops and iterators?
+There are two types of for loops which behave very differently.
+- One uses indices.
+```
+let arr = [1,2,3,4]
+for(let index = 0; i< arr.length; i++){
+  console.log(arr[index])
+}
+```
+
+- This kind of loop isn't always possible. For example, Lists have indices, but Sets don't, because they're unordered collections. The other one, the foreach loop uses an Iterator behind the scenes:.
+
+```
+let mySet = new Set();
+mySet.add(1);
+mySet.add(2);
+mySet.add(3);
+mySet.add(4);
+for (let item of mySet) {
+  console.log(item)
+}
+```
+And finally, you can use an Iterator, which also works with any Iterable:
+The iterator provides advantage in cases 
++ Where you want to move over the collection in both forward and backward using next() and previous() function.
++ When you want to remove elements from collections safely while iterating over collections.
+When you want to do more than just iterating over collection Iterator can be used. 
++ You can loop through the list using a for loop as many times as you want, but you can only loop through the list using an iterator once. To loop again using an iterator you will need to reinitialize the iterator.
+
+We have to initialize the iterator over the collection before using it.
+```
+//Wrong
+let arr = [1,2,3,4,5,6];
+arr.next();
+
+//Correct
+let arr = [1,2,3,4,5,6]
+let iterator = arr[Symbol.iterator]();
+
+iterator.next();
+
+```
+**References**
+- https://codeburst.io/a-simple-guide-to-es6-iterators-in-javascript-with-examples-189d052c3d8e
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols
+
+<br><br>
 # Tricky JavaScript interview questions and answers
 
 **Find output:**

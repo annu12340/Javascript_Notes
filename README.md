@@ -28,6 +28,7 @@ https://annu12340.github.io/Javascript-Notes/
 - Currying function
 - Event Bubbling and Capturing
 - Debugging
+- Generator Function
 
 <br/>
 
