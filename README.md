@@ -15,6 +15,9 @@ https://annu12340.github.io/Javascript-Notes/
 - Passing by Value vs. Reference
 - Timer function
 - Truthy and Falsy values
+- concept of inheritence
+- inner classes
+- java IO stream
 
 ### Advanced
 
