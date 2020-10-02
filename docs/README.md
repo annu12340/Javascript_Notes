@@ -1110,6 +1110,7 @@ The iterator provides advantage in cases
 When you want to do more than just iterating over collection Iterator can be used. 
 + You can loop through the list using a for loop as many times as you want, but you can only loop through the list using an iterator once. To loop again using an iterator you will need to reinitialize the iterator.
 
+We have to initialize the iterator over the collection before using it.
 ```
 //Wrong
 let arr = [1,2,3,4,5,6];
