@@ -20,6 +20,7 @@
 =======
 - Difference between innerHTML and innerText
 - Truthy and Falsy values
+- DOM Manipulation
 
 ### Good to know
 
@@ -39,6 +40,7 @@
 - Currying function
 - Event Bubbling and Capturing
 - Debugging
+- Generator Function
 
 <br/>
 
@@ -56,7 +58,7 @@
 
 <hr/>
 
-# Begineer
+# Beginner
 
 ![44d0f9f5f90db6a3bc8542642cb38dbe9f10fec1cdadb7264fb7962751f61393_1](https://user-images.githubusercontent.com/43414928/94434636-bc9d4b00-01b7-11eb-8671-4f791e20b958.jpg)
 
@@ -322,25 +324,25 @@ There are two methods for it:
 - setInterval allows us to run a function repeatedly, starting after the interval of time, then repeating continuously at that interval.
 - Infinities
 
-  ### Positive INFINITY
+  * Positive INFINITY
   
-		POSITIVE_INFINITY is displayed when a number exceeds the upper limit of the floating point numbers, which is  "1.797693134862315E+308"
+    POSITIVE_INFINITY is displayed when a number exceeds the upper limit of the floating point numbers, which is  "1.797693134862315E+308"
 		
-		 alert(Math.pow(10, 1000)); /* Infinity */  
+           alert(Math.pow(10, 1000)); /* Infinity */  
 		
-  ### Negative INFINITY
+  * Negative INFINITY
   
-               NEGATIVE_INFINITY is displayed when a number exceeds the lower limit of the floating point numbers, which is "-1.797693134862316E+308".
+     NEGATIVE_INFINITY is displayed when a number exceeds the lower limit of the floating point numbers, which is "-1.797693134862316E+308".
 		
   **POSITIVE_INFINITY** vs. **MAX_VALUE** (or **NEGATIVE_INFINITY** vs. **MIN_VALUE** )
-   1. The value of the MAX_VALUE property is the largest number your JavaScript interpreter can             handle. Larger value will be viewed as POSITIVE_INFINITY.
+   1. The value of the MAX_VALUE property is the largest number your JavaScript interpreter can handle. Larger value will be viewed as POSITIVE_INFINITY.
    2. The value of NEGATIVE_INFINITY and POSITIVE_INFINITY are read-only they cannot be changed by
       your scripts; they are returned by JavaScript whenever a function or operation returns a number
       larger than the MAX_VALUE the JavaScript interpreter can handle
 		**See the code snippet**
 		
          ![Code](https://raw.githubusercontent.com/sumitt1080/demo/master/Capture1.jpg)
-         
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
  <hr/>
  
@@ -460,6 +462,116 @@ NaN	             NaN - not a number
 
 ![Falsy Values](https://miro.medium.com/max/375/1*fYDCaOWdYvuzqBYl_r8XEQ.png)
 
+<br/>
+
+## 8.DOM Manipulation
+
+Document Object Model, or DOM for short, represents all page content as objects that can be modified. And Javascript allow us to modify DOM.
+
+The main 2 objects provided by the DOM API that you will interact the most with are document and window.
+
+ 1.  The Window object - The window object represents the window that contains the DOM document.
+window.document points to the document object loaded in the window.
+Properties and methods of this object can be called without referencing window explicitly, because it represents the global object. So, the previous property window.document is usually called just document.
+
+ - Properties - Here is a list of useful Window properties you will likely reference a lot:
+  >- **console** points to the browser debugging console. Useful to print error messages or logging, using console.log, console.error and other tools (see the Browser DevTools article)
+  >- **document** as already said, points to the document object, key to the DOM interactions you will perform
+  >- **history** gives access to the History API
+  >- **location** gives access to the Location interface, from which you can determine the URL, the protocol, the hash and other useful information.
+  >- **localStorage** is a reference to the Web Storage API localStorage object
+  >- **sessionStorage** is a reference to the Web Storage API sessionStorage object
+
+- Methods - Here is a list of useful Window Methods you will likely reference a lot:
+>- alert(): which you can use to display alert dialogs
+>- postMessage(): used by the Channel Messaging API
+>- requestAnimationFrame(): used to perform animations in a way that’s both performant and easy on the CPU
+>- setInterval(): call a function every n milliseconds, until the interval is cleared with clearInterval()
+>- clearInterval(): clears an interval created with setInterval()
+>- setTimeout(): execute a function after ‘n’ milliseconds
+>- setImmediate(): execute a function as soon as the browser is ready
+>- addEventListener(): add an event listener to the document
+>- removeEventListener(): remove an event listener from the document
+
+2. Document - The Document interface represents any web page loaded in the browser and serves as an entry point into the web page's content, which is the DOM tree.
+
+Note:- 
+- Window is the main JavaScript object root, also known as the global object in a browser, also can be treated as the root of the document object model. You can access it as window.
+- Document is the main object of the potentially visible/rendered document object model/DOM.
+
+
+Example of a DOM tree:- 
+
+Representation of a portion of the DOM pointing to the head and body tags:
+![](https://flaviocopes.com/dom/dom-body-head.png)
+
+Tags are element nodes (or just elements) and form the tree structure: <html> is at the root, then <head> and <body> are its children, etc.
+
+#### **1. Traversing the DOM**
+All operations on the DOM start with the document object. That’s the main “entry point” to DOM. From it we can access any node.
+> ![](https://i.imgur.com/NvMOqdb.png)
+
+#### **2. Getting the parent**
+You can you can use **Node.parentNode** or **Node.parentElement** (where Node means a node in the DOM).
+> ![](https://i.imgur.com/ojExGs7.png)
+
+#### **3. Getting the children**
+- To access all the Children Element Nodes of a node, use **Node.childNodes**.
+> ![](https://i.imgur.com/5MWf3Fy.png)
+
+- To get the first child Element Node, use **Node.firstElementChild**. To get the last child Element Node, use **Node.lastElementChild**:
+> ![](https://i.imgur.com/eamCRc4.png)
+
+- **Node.firstChild** - It is a read-only property returns the node's first child in the tree, or null if the node has no children. If the node is a Document, it returns the first node in the list of its direct children.
+
+- **Node.lastChild** - It is a read-only property returns the last child of the node. If its parent is an element, then the child is generally an element node, a text node, or a comment node. It returns null if there are no child elements.
+> ![](https://i.imgur.com/9Z8LoSC.png)
+
+#### **4. Modifying the DOM** 
+The DOM offers various methods to edit the nodes of the page and alter the document tree with:-
+- **document.createElement()**: creates a new Element Node
+- **document.createTextNode()**: creates a new Text Node
+you can create new elements, and add them to the DOM elements you want as children, by using document.appendChild():
+```
+const div = document.createElement('div')
+div.appendChild(document.createTextNode('Hello world!'))
+```
+- **first.removeChild(second)** removes the child node “second” from the node “first”.
+- **document.insertBefore(newNode, existingNode)** inserts “newNode” as a sibling of “existingNode”, placing it before that in the DOM tree structure.
+- **element.appendChild(newChild)** alters the tree under “element”, adding a new child Node “newChild” to it, after all the other children.
+- **element.prepend(newChild)** alters the tree under “element”, adding a new child Node “newChild” to it, before other child elements. You can pass one or more child Nodes, or even a string which will be interpreted as a Text node.
+- **element.replaceChild(newChild, existingChild)** alters the tree under “element”, replacing “existingChild” with a new Node “newChild”.
+- **element.insertAdjacentElement(position, newElement)** inserts “newElement” in the DOM, positioned relatively to “element” depending on “position” parameter value. See the possible values.
+- **element.textContent = 'something'** changes the content of a Text node to “something”.
+
+**Reference**
+
+## Infinities
+
+  * Positive INFINITY
+  
+    POSITIVE_INFINITY is displayed when a number exceeds the upper limit of the floating point numbers, which is  "1.797693134862315E+308"
+		
+           alert(Math.pow(10, 1000)); /* Infinity */  
+		
+  * Negative INFINITY
+  
+     NEGATIVE_INFINITY is displayed when a number exceeds the lower limit of the floating point numbers, which is "-1.797693134862316E+308".
+		
+  **POSITIVE_INFINITY** vs. **MAX_VALUE** (or **NEGATIVE_INFINITY** vs. **MIN_VALUE** )
+   1. The value of the MAX_VALUE property is the largest number your JavaScript interpreter can handle. Larger value will be viewed as POSITIVE_INFINITY.
+   2. The value of NEGATIVE_INFINITY and POSITIVE_INFINITY are read-only they cannot be changed by
+      your scripts; they are returned by JavaScript whenever a function or operation returns a number
+      larger than the MAX_VALUE the JavaScript interpreter can handle
+		**See the code snippet**
+		
+         ![Code](https://raw.githubusercontent.com/sumitt1080/demo/master/Capture1.jpg)
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+- https://javascript.info/
+- https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model
+
+<br/>
 # Good to know
 
 ## 1. Execution context
@@ -818,9 +930,43 @@ With capturing, the event is first captured by the outermost element and propaga
 
 https://www.youtube.com/watch?v=-bS6u_oQFtc&list=PL7pEw9n3GkoW5bYOhVAtmJlak3ZK7SaDf&index=29
 
+## 11. Generator function
+
+Function keyword followed by an asterisk is used to define a generator function, which returns a Generator object.
+We can exit and re-entered the generator function later on. In case of re-entrances, their context (variable bindings) will be saved.
+Important point to note here is that calling a generator function does not execute its body immediately, in fact it returns an iterator object for the function.
+In short, a generator appears to be a function but it behaves like an iterator.
+
+* Generators are a special class of functions that simplify the task of writing iterators.
+* A generator is a function that produces a sequence of results instead of a single value, i.e you generate ​a series of values.
+
+```
+Syntax :
+
+function* generatorFunctionName([param[, param[, ... param]]]) {
+   statements
+}
+```
+```
+name : Function name
+param | Optional : Formal parameter for the function.
+statements : Comprising the body of the function.
+```
+```
+  function* generator(i) {
+  yield i;
+  yield i + 1;
+}
+const gen = generator(1);
+console.log(gen.next().value);
+// expected output: 1
+console.log(gen.next().value);
+// expected output: 2 
+```
+
 <br/> <br/>
 
-## 11. Asynchronous js
+## 12. Asynchronous js
 
 1. Callback function
 2. Promises
@@ -834,11 +980,12 @@ JavaScript is synchronous by default and is single threaded. This means that cod
 - https://flaviocopes.com/javascript-async-await/
 - https://www.youtube.com/watch?v=IGoAdn-e5II
 
-## 12. JavaScript Design Patterns
+## 13. JavaScript Design Patterns
 
 https://medium.com/better-programming/javascript-design-patterns-25f0faaaa15
 
-## 13. Iterators and generators
+
+## 14. Iterators and generators
 
 Iterators are a new way to loop over any collection in JavaScript.
 
@@ -846,7 +993,7 @@ https://codeburst.io/a-simple-guide-to-es6-iterators-in-javascript-with-examples
 
 <br/>
 
-## 14. Throttle vs debounce
+## 15. Throttle vs debounce
 
 Throttling and debouncing are two ways to optimize event handling.
 
@@ -861,7 +1008,7 @@ https://css-tricks.com/the-difference-between-throttling-and-debouncing/
 
 <br/>
 
-## 15. Object creation patterns tutorial 
+## 16. Object creation patterns tutorial 
 
 https://www.youtube.com/watch?v=xizFJHKHdHw&list=PL7pEw9n3GkoW5bYOhVAtmJlak3ZK7SaDf&index=5
 
@@ -904,7 +1051,7 @@ var o = thing();
 
 <br/>
 
-## 16. JavaScript ES2020
+## 17. JavaScript ES2020
 
 The new JavaScript features in ES2020 are:
 
@@ -929,7 +1076,9 @@ _Reference_
 - https://radiant-brushlands-42789.herokuapp.com/medium.com/better-programming/javascript-es2020-features-with-simple-examples-d301dbef2c37
 - https://www.freecodecamp.org/news/javascript-new-features-es2020/
 
-<br/> <br/> <br/>
+
+
+<br/> <br/>  <br/>
 
 # Tricky JavaScript interview questions and answers
 
