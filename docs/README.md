@@ -40,6 +40,7 @@
 - Currying function
 - Event Bubbling and Capturing
 - Debugging
+- Generator Function
 
 <br/>
 
@@ -886,9 +887,43 @@ With capturing, the event is first captured by the outermost element and propaga
 
 https://www.youtube.com/watch?v=-bS6u_oQFtc&list=PL7pEw9n3GkoW5bYOhVAtmJlak3ZK7SaDf&index=29
 
+## 11. Generator function
+
+Function keyword followed by an asterisk is used to define a generator function, which returns a Generator object.
+We can exit and re-entered the generator function later on. In case of re-entrances, their context (variable bindings) will be saved.
+Important point to note here is that calling a generator function does not execute its body immediately, in fact it returns an iterator object for the function.
+In short, a generator appears to be a function but it behaves like an iterator.
+
+* Generators are a special class of functions that simplify the task of writing iterators.
+* A generator is a function that produces a sequence of results instead of a single value, i.e you generate ​a series of values.
+
+```
+Syntax :
+
+function* generatorFunctionName([param[, param[, ... param]]]) {
+   statements
+}
+```
+```
+name : Function name
+param | Optional : Formal parameter for the function.
+statements : Comprising the body of the function.
+```
+```
+  function* generator(i) {
+  yield i;
+  yield i + 1;
+}
+const gen = generator(1);
+console.log(gen.next().value);
+// expected output: 1
+console.log(gen.next().value);
+// expected output: 2 
+```
+
 <br/> <br/>
 
-## 11. Asynchronous js
+## 12. Asynchronous js
 
 1. Callback function
 2. Promises
@@ -902,11 +937,12 @@ JavaScript is synchronous by default and is single threaded. This means that cod
 - https://flaviocopes.com/javascript-async-await/
 - https://www.youtube.com/watch?v=IGoAdn-e5II
 
-## 12. JavaScript Design Patterns
+## 13. JavaScript Design Patterns
 
 https://medium.com/better-programming/javascript-design-patterns-25f0faaaa15
 
-## 13. Iterators and generators
+
+## 14. Iterators and generators
 
 Iterators are a new way to loop over any collection in JavaScript.
 
@@ -914,7 +950,7 @@ https://codeburst.io/a-simple-guide-to-es6-iterators-in-javascript-with-examples
 
 <br/>
 
-## 14. Throttle vs debounce
+## 15. Throttle vs debounce
 
 Throttling and debouncing are two ways to optimize event handling.
 
@@ -929,7 +965,7 @@ https://css-tricks.com/the-difference-between-throttling-and-debouncing/
 
 <br/>
 
-## 15. Object creation patterns tutorial 
+## 16. Object creation patterns tutorial 
 
 https://www.youtube.com/watch?v=xizFJHKHdHw&list=PL7pEw9n3GkoW5bYOhVAtmJlak3ZK7SaDf&index=5
 
@@ -972,7 +1008,7 @@ var o = thing();
 
 <br/>
 
-## 16. JavaScript ES2020
+## 17. JavaScript ES2020
 
 The new JavaScript features in ES2020 are:
 
