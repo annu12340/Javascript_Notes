@@ -20,6 +20,7 @@
 - Difference between innerHTML and innerText
 - Truthy and Falsy values
 - DOM Manipulation
+- Infinities
 
 
 ### Good to know
@@ -564,15 +565,15 @@ div.appendChild(document.createTextNode('Hello world!'))
 
 **Reference**
 
-## Infinities
+## 12. Infinities
 
-  * Positive INFINITY
+####  * Positive INFINITY
   
     POSITIVE_INFINITY is displayed when a number exceeds the upper limit of the floating point numbers, which is  "1.797693134862315E+308"
 		
            alert(Math.pow(10, 1000)); /* Infinity */  
 		
-  * Negative INFINITY
+####  * Negative INFINITY
   
      NEGATIVE_INFINITY is displayed when a number exceeds the lower limit of the floating point numbers, which is "-1.797693134862316E+308".
 		
