@@ -1,4 +1,5 @@
-# Visit site 
+# Visit site
+
 https://annu12340.github.io/Javascript-Notes/
 
 <br/><br/>
@@ -6,15 +7,17 @@ https://annu12340.github.io/Javascript-Notes/
 # Index
 
 ### Beginner
+
 - let vs var vs const
 - Difference between function declaration & function expression
 - Primitive data type
 - Coercion
 - Passing by Value vs. Reference
 - Timer function
-
+- Truthy and Falsy values
 
 ### Advanced
+
 - Spread operator
 - Rest syntax
 - Destructuring
@@ -27,7 +30,6 @@ https://annu12340.github.io/Javascript-Notes/
 - Debugging
 - Generator Function
 
-
 <br/>
 
 - Asynchronous js
@@ -38,7 +40,6 @@ https://annu12340.github.io/Javascript-Notes/
 - JavaScript ES2020
 - Tricky JavaScript interview questions and answers
 
-
-
 ### CSS Notes
+
 https://github.com/ResourceAggregator/Frontend-stuff/blob/master/css/css.md
