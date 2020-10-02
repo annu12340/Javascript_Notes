@@ -1051,9 +1051,84 @@ _Reference_
 - https://www.freecodecamp.org/news/javascript-new-features-es2020/
 
 
+## 19. Iterators 
 
-<br/> <br/>  <br/>
 
+Iterators are a new way to loop over any collection in JavaScript.
+An iterable is an object that can return an iterator using the iter() function; while an iterator is an object that keeps state and produces the next value when you call the next() function on it.
+
+Following values are iterables:
+- Arrays
+- Strings
+- Maps
+- Sets
+- DOM data structures (work in progress)https://github.com/TroyTae/game-of-life/blob/master/README.md
+
+Plain objects are not iterable!
+
+Iterators are Objects which uses iterator protocols.
+- After defining iterator next() method is used to iterate over the collection.
+
+```
+let numbers = new Sequence(1,2,3,4,5,6);
+let iterator = numbers[Symbol.iterator]();
+
+let result = iterator.next();
+
+while(!result.done) {
+  console.log(result.value);
+  result=iterator.next()
+}
+```
+
+What is the difference between loops and iterators?
+There are two types of for loops which behave very differently.
+- One uses indices.
+```
+let arr = [1,2,3,4]
+for(let index = 0; i< arr.length; i++){
+  console.log(arr[index])
+}
+```
+
+- This kind of loop isn't always possible. For example, Lists have indices, but Sets don't, because they're unordered collections. The other one, the foreach loop uses an Iterator behind the scenes:.
+
+```
+let mySet = new Set();
+mySet.add(1);
+mySet.add(2);
+mySet.add(3);
+mySet.add(4);
+for (let item of mySet) {
+  console.log(item)
+}
+```
+And finally, you can use an Iterator, which also works with any Iterable:
+The iterator provides advantage in cases 
++ Where you want to move over the collection in both forward and backward using next() and previous() function.
++ When you want to remove elements from collections safely while iterating over collections.
+When you want to do more than just iterating over collection Iterator can be used. 
++ You can loop through the list using a for loop as many times as you want, but you can only loop through the list using an iterator once. To loop again using an iterator you will need to reinitialize the iterator.
+
+We have to initialize the iterator over the collection before using it.
+```
+//Wrong
+let arr = [1,2,3,4,5,6];
+arr.next();
+
+//Correct
+let arr = [1,2,3,4,5,6]
+let iterator = arr[Symbol.iterator]();
+
+iterator.next();
+
+```
+**References**
+- https://codeburst.io/a-simple-guide-to-es6-iterators-in-javascript-with-examples-189d052c3d8e
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols
+
+<br><br>
 # Tricky JavaScript interview questions and answers
 
 **Find output:**
