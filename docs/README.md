@@ -58,7 +58,7 @@
 
 <hr/>
 
-# Beginner
+# Begineer
 
 ![44d0f9f5f90db6a3bc8542642cb38dbe9f10fec1cdadb7264fb7962751f61393_1](https://user-images.githubusercontent.com/43414928/94434636-bc9d4b00-01b7-11eb-8671-4f791e20b958.jpg)
 
@@ -322,27 +322,7 @@ There are two methods for it:
 
 - setTimeout allows us to run a function once after the interval of time.
 - setInterval allows us to run a function repeatedly, starting after the interval of time, then repeating continuously at that interval.
-- Infinities
 
-  * Positive INFINITY
-  
-    POSITIVE_INFINITY is displayed when a number exceeds the upper limit of the floating point numbers, which is  "1.797693134862315E+308"
-		
-           alert(Math.pow(10, 1000)); /* Infinity */  
-		
-  * Negative INFINITY
-  
-     NEGATIVE_INFINITY is displayed when a number exceeds the lower limit of the floating point numbers, which is "-1.797693134862316E+308".
-		
-  **POSITIVE_INFINITY** vs. **MAX_VALUE** (or **NEGATIVE_INFINITY** vs. **MIN_VALUE** )
-   1. The value of the MAX_VALUE property is the largest number your JavaScript interpreter can handle. Larger value will be viewed as POSITIVE_INFINITY.
-   2. The value of NEGATIVE_INFINITY and POSITIVE_INFINITY are read-only they cannot be changed by
-      your scripts; they are returned by JavaScript whenever a function or operation returns a number
-      larger than the MAX_VALUE the JavaScript interpreter can handle
-		**See the code snippet**
-		
-         ![Code](https://raw.githubusercontent.com/sumitt1080/demo/master/Capture1.jpg)
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
  <hr/>
  
