@@ -20,6 +20,7 @@
 - Difference between innerHTML and innerText
 - Truthy and Falsy values
 - DOM Manipulation
+- Infinities
 
 
 ### Good to know
@@ -459,6 +460,7 @@ NaN	             NaN - not a number
 
 <br/>
 
+
 ## 11.DOM Manipulation
 
 Document Object Model, or DOM for short, represents all page content as objects that can be modified. And Javascript allow us to modify DOM.
@@ -540,6 +542,29 @@ div.appendChild(document.createTextNode('Hello world!'))
 - **element.textContent = 'something'** changes the content of a Text node to “something”.
 
 **Reference**
+
+## 12. Infinities
+
+####  * Positive INFINITY
+  
+    POSITIVE_INFINITY is displayed when a number exceeds the upper limit of the floating point numbers, which is  "1.797693134862315E+308"
+		
+           alert(Math.pow(10, 1000)); /* Infinity */  
+		
+####  * Negative INFINITY
+  
+     NEGATIVE_INFINITY is displayed when a number exceeds the lower limit of the floating point numbers, which is "-1.797693134862316E+308".
+		
+  **POSITIVE_INFINITY** vs. **MAX_VALUE** (or **NEGATIVE_INFINITY** vs. **MIN_VALUE** )
+   1. The value of the MAX_VALUE property is the largest number your JavaScript interpreter can handle. Larger value will be viewed as POSITIVE_INFINITY.
+   2. The value of NEGATIVE_INFINITY and POSITIVE_INFINITY are read-only they cannot be changed by
+      your scripts; they are returned by JavaScript whenever a function or operation returns a number
+      larger than the MAX_VALUE the JavaScript interpreter can handle
+		**See the code snippet**
+		
+         ![Code](https://raw.githubusercontent.com/sumitt1080/demo/master/Capture1.jpg)
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 - https://javascript.info/
 - https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model
@@ -1049,6 +1074,7 @@ _Reference_
 
 - https://radiant-brushlands-42789.herokuapp.com/medium.com/better-programming/javascript-es2020-features-with-simple-examples-d301dbef2c37
 - https://www.freecodecamp.org/news/javascript-new-features-es2020/
+
 
 
 ## 19. Iterators 
