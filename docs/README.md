@@ -20,6 +20,7 @@
 - Difference between innerHTML and innerText
 - Truthy and Falsy values
 - DOM Manipulation
+- Error and error handling
 - Infinities
 
 
