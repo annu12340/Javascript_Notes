@@ -42,8 +42,7 @@
 - Currying function
 - Event Bubbling and Capturing
 - Debugging
-- Generator Function
-
+- Local storage vs Session storage
 <br/>
 
 - Asynchronous js
@@ -53,10 +52,6 @@
 - object creation patterns tutorial - factory , constructor pattern, prototype pattern
 - JavaScript ES2020
 - Tricky JavaScript interview questions and answers
-
-### Good references
-
-1. https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95
 
 <hr/>
 
@@ -1140,7 +1135,23 @@ _Reference_
 - https://radiant-brushlands-42789.herokuapp.com/medium.com/better-programming/javascript-es2020-features-with-simple-examples-d301dbef2c37
 - https://www.freecodecamp.org/news/javascript-new-features-es2020/
 
+<br/> 
 
+## 18. Local storage vs Session storage
+
+localStorage and sessionStorage accomplish the exact same thing and have the same API, but with sessionStorage the data is persisted only until the window or tab is closed, while with localStorage the data is persisted until the user manually clears the browser cache or until your web app clears the data. The examples in this post are for localStorage, but the same syntax works for sessionStorage.
+
+```
+Create key/value pair entries with localStorage.setItem, providing a key and a value:
+let key = 'Item 1';
+localStorage.setItem(key, 'Value');
+``` 
+
+**Reference**
+
+- https://www.digitalocean.com/community/tutorials/js-introduction-localstorage-sessionstorage
+
+<br/>  <br/>
 
 ## 19. Iterators 
 
@@ -1221,6 +1232,12 @@ iterator.next();
 
 <br><br>
 # Tricky JavaScript interview questions and answers
+
+
+### Good references
+
+1. https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95
+
 
 **Find output:**
 
