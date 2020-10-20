@@ -1231,6 +1231,69 @@ iterator.next();
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols
 
 <br><br>
+
+## 20. JavaScript Paradigms
+Modern programming languages fall into two categories: imperative (also called procedural) and declarative (also called functional).
+Object-oriented programming (OOP), procedural programming, and parallel processing are examples of the imperative programming paradigm.
+Functional programming, logic programming, and database processing are examples of the declarative programming paradigm.
+
+JavaScript supports both object-oriented programming with prototypal inheritance as well as functional programming.
+
+Programming paradigms are a way to classify programming languages based on their features. Programming paradigm is an approach to solve problem using some programming language or also we can say it is a method to solve a problem using tools and techniques that are available to us following some approach. Some paradigms are concerned mainly with implications for the execution model of the language, such as allowing side effects, or whether the sequence of operations is defined by the execution model. Other paradigms are concerned mainly with the way that code is organized, such as grouping a code into units along with the state that is modified by the code. Yet others are concerned mainly with the style of syntax and grammar.
+
+Common programming paradigms include:
+
+1. Imperative in which the programmer instructs the machine how to change its state,
+procedural which groups instructions into procedures.
+
+2. Object-oriented which groups instructions together with the part of the state they operate on.
+
+3. Declarative in which the programmer merely declares properties of the desired result, but not how to compute it.
+
+4. Functional in which the desired result is declared as the value of a series of function applications.
+
+5. Logic in which the desired result is declared as the answer to a question about a system of facts and rules.
+
+6. Mathematical in which the desired result is declared as the solution of an optimization problem.
+
+We shall be dicussing two of them in this;
+
+(i) Imperative
+(ii) Declarative
+ 
+(i) Imperative programming - It is a programming paradigm that uses statements that change a program's state. In much the same way that the imperative mood in natural languages expresses commands, an imperative program consists of commands for the computer to perform. Imperative programming focuses on describing how a program operates.
+
+The term is often used in contrast to declarative programming, which focuses on what the program should accomplish without specifying how the program should achieve the result.The program is built from one or more procedures (also termed subroutines or functions). Heavily procedural programming, in which state changes are localized to procedures or restricted to explicit arguments and returns from procedures, is a form of structured programming. Procedural programming could be considered a step toward declarative programming. A programmer can often tell, simply by looking at the names, arguments, and return types of procedures (and related comments), what a particular procedure is supposed to do, without necessarily looking at the details of how it achieves its result. At the same time, a complete program is still imperative since it 'fixes' the statements to be executed and their order of execution to a large extent. 
+
+Advantages:
+1. Very simple to implement.
+2. It contains loops, variables etc.
+3. Conceptual model (solution path) is very easy for beginners to understand.
+4. Characteristics of specific applications can be taken into account.
+
+Disadvantages:
+1. Code quickly becomes very extensive and thus confusing.
+2. 	Higher risk of errors when editing.
+3. System-oriented programming means that maintenance blocks application development.
+4. Optimization and extension is more difficult. Less efficient and less productive
+5. Parallel programming is not possible
+
+
+
+(ii) Declarative programming - Declarative programming is a style of building the structure and elements of computer programs—that expresses the logic of a computation without describing its control flow. Many languages that apply this style attempt to minimize or eliminate side effects by describing what the program must accomplish in terms of the problem domain, rather than describe 'how' to accomplish it as a sequence of the programming language primitives. This is in contrast with imperative programming, which implements algorithms in explicit steps. Declarative programming often considers programs as theories of a formal logic, and computations as deductions in that logic space. Declarative programming may greatly simplify writing parallel programs. 
+
+It is a non-imperative style of programming in which programs describe their desired results without explicitly listing commands or steps that must be performed. Functional and logical programming languages are characterized by a declarative programming style. In logical programming languages, programs consist of logical statements, and the program executes by searching for proofs of the statements.
+
+Advantages:	
+1. Short, efficient code.	
+2. Can be implemented using methods not yet known at the time of programming.	
+3. Easy optimization as implementation is controlled by an algorithm.	
+4. Maintenance possible independent of application development.
+
+Disadvantages:
+1. Sometimes hard to understand for external people.
+2. Based on an unfamiliar conceptual model for people (solution state).
+3. Hard to take characteristics of individual applications into account during programming.
 # Tricky JavaScript interview questions and answers
 
 
