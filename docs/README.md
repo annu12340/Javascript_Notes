@@ -1233,6 +1233,7 @@ iterator.next();
 <br><br>
 
 ## 20. JavaScript Paradigms
+
 Modern programming languages fall into two categories: imperative (also called procedural) and declarative (also called functional).
 Object-oriented programming (OOP), procedural programming, and parallel processing are examples of the imperative programming paradigm.
 Functional programming, logic programming, and database processing are examples of the declarative programming paradigm.
