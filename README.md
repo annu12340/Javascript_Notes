@@ -41,5 +41,4 @@ https://annu12340.github.io/Javascript-Notes/
 
 ### CSS Notes
 https://github.com/ResourceAggregator/Frontend-stuff/blob/master/css/css.md
-To know the difference between local and session storage visit the file(local vs session storage)  or this 
-link https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage
+
